@@ -8,9 +8,15 @@ public class Categoria {
     }
 
     public int getIdCategoria() { return idCategoria; }
-    public String getNomeCategoria() { return nomeCategoria; }
-
     public void setIdCategoria(int idCategoria) { this.idCategoria = idCategoria; }
+
+    public String buscarNomeCategoria(int idCategoria) {
+        return "";
+    }
+
+
+    public String getNomeCategoria() { return nomeCategoria; }
+    
     public void setNomeCategoria(String nomeCategoria) { this.nomeCategoria = nomeCategoria; }
 
     public String toString() {

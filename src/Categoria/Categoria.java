@@ -1,3 +1,5 @@
+package Categoria;
+
 public class Categoria {
     private int idCategoria;
     private String nomeCategoria;
@@ -9,11 +11,6 @@ public class Categoria {
 
     public int getIdCategoria() { return idCategoria; }
     public void setIdCategoria(int idCategoria) { this.idCategoria = idCategoria; }
-
-    public String buscarNomeCategoria(int idCategoria) {
-        return "";
-    }
-
 
     public String getNomeCategoria() { return nomeCategoria; }
     

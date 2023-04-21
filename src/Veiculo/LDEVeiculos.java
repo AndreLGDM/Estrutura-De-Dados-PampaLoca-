@@ -1,14 +1,16 @@
-public class LDE implements ILista {
-    private Noh inicio;
-    private Noh fim;
+package Veiculo;
 
-    public LDE() {
+public class LDEVeiculos {
+    private NohVeiculos inicio;
+    private NohVeiculos fim;
+
+    public LDEVeiculos() {
         this.inicio = null;
         this.fim = null;
     }
 
-    public void insereInicio(Object obj) { 
-        Noh novo = new Noh(obj);
+    public void insereInicio(Veiculo veiculo) { 
+        NohVeiculos novo = new NohVeiculos(veiculo);
 
         if(inicio == null) {
             inicio = novo;
@@ -21,8 +23,8 @@ public class LDE implements ILista {
         }
     }
 
-    public void insereFim(Object obj) { 
-        Noh novo = new Noh(obj);
+    public void insereFim(Veiculo veiculo) { 
+        NohVeiculos novo = new NohVeiculos(veiculo);
 
         if(inicio == null){
             inicio = novo;
@@ -42,17 +44,17 @@ public class LDE implements ILista {
         return false;
     }
 
-    private Noh busca(Object obj) {
-        Noh noh = inicio;
+    public NohVeiculos busca(String placaVeiculo) {
+        NohVeiculos noh = inicio;
 
-        while (noh != null && noh.getObjeto() != obj) {
+        while (noh != null && !noh.getVeiculo().getPlacaVeiculo().equals(placaVeiculo)) {
             noh = noh.getProximo();
         }
         return noh;
     }
-    
-    public boolean remove(Object obj) {
-        Noh noh = busca(obj);
+
+    public boolean remove(String placaVeiculo) {
+        NohVeiculos noh = busca(placaVeiculo);
 
         if(noh == null) {
             return false;
@@ -81,9 +83,33 @@ public class LDE implements ILista {
     public int tamanho() { 
         int tam = 0;
 
-        for(Noh i = inicio; i != null; i = i.getProximo()) {
+        for(NohVeiculos i = inicio; i != null; i = i.getProximo()) {
             tam++;
         }
         return tam;
+    }
+
+    public String inicioFim() {
+        String str = "\n";
+        NohVeiculos veiculo = inicio;
+
+        while(veiculo != null) {
+            str += "- "+veiculo.getVeiculo()+"\n";
+            veiculo = veiculo.getProximo();
+        }
+
+        return str;
+    }
+
+    public String fimInicio() {
+        String str = "\n";
+        NohVeiculos veiculo = fim;
+
+        while(veiculo != null) {
+            str += veiculo.getVeiculo()+"\n";
+            veiculo = veiculo.getAnterior();
+        }
+
+        return str;
     }
 }

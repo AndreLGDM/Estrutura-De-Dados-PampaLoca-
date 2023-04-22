@@ -6,7 +6,7 @@ public class LDE implements ILista {
 
     Scanner in = new Scanner(System.in);
 
-    private Veiculo v;
+    private int tamanho = 0;
     private Noh inicio;
     private Noh fim;
 
@@ -27,6 +27,7 @@ public class LDE implements ILista {
             inicio.setAnterior(novo);
             inicio = novo;
         }
+        tamanho++;
     }
 
     @Override
@@ -41,6 +42,7 @@ public class LDE implements ILista {
             fim.setProximo(novo);
             fim = novo;
         }
+        tamanho++;
     }
 
     @Override
@@ -84,68 +86,78 @@ public class LDE implements ILista {
     }
 
     @Override
-    public Object remove(Object objeto) {
+    public boolean remove(Object objeto) {
         Noh nohRemovido = null;
         if (objeto instanceof Categoria) {
-            System.out.println("Digite a id da categoria a ser removida: ");
+            System.out.print("Digite a id da categoria a ser removida: ");
             int idCategoria = in.nextInt();
+            System.out.println();
             nohRemovido = buscaCategoria(idCategoria);
         } else if (objeto instanceof Veiculo) {
-            System.out.println("Digite a placa do veículo a ser removido: ");
+            System.out.print("Digite a placa do veículo a ser removido: ");
             String placaVeiculo = in.next();
+            System.out.println();
             nohRemovido = buscaPlaca(placaVeiculo);
         }
-        if (nohRemovido != null) {
-            // Remove o nó da lista
-            if (nohRemovido == inicio) {
-                inicio = nohRemovido.getProximo();
-            } else {
-                Noh nohAnterior = inicio;
-                while (nohAnterior.getProximo() != nohRemovido) {
-                    nohAnterior = nohAnterior.getProximo();
-                }
-                nohAnterior.setProximo(nohRemovido.getProximo());
-            }
-            // Retorna o objeto removido
-            return nohRemovido.getObjeto();
+        if (nohRemovido == null) {
+            return false;
         }
-        // Retorna null se o objeto não foi encontrado
-        return null;
+        if (estahVazia()) {
+            return false;
+        }
+        if (nohRemovido == inicio) { // info está no início
+            inicio = nohRemovido.getProximo();
+            if (inicio != null) {
+                inicio.setAnterior(null);
+            } else {
+                fim = null;
+            }
+        } else if (nohRemovido == fim) { // info está no fim
+            fim = nohRemovido.getAnterior();
+            fim.setProximo(null);
+        } else { // info está no meio
+            nohRemovido.getAnterior().setProximo(nohRemovido.getProximo());
+            nohRemovido.getProximo().setAnterior(nohRemovido.getAnterior());
+        }
+        tamanho--;
+        return true;
     }
 
     @Override
     public int tamanho() {
-        int tam = 0;
-
-        for (Noh i = inicio; i != null; i = i.getProximo()) {
-            tam++;
-        }
-        return tam;
+        return tamanho;
     }
 
     @Override
-    public String inicioFim() {
-        String str = "\n";
-        Noh categoria = inicio;
-
-        while (categoria != null) {
-            str += "- " + categoria.getObjeto() + "\n";
-            categoria = categoria.getProximo();
+    public void inicioFim() {
+        if (estahVazia()) {
+            System.out.println("A lista está vazia.");
+            return;
         }
 
-        return str;
+        Noh atual = inicio;
+        while (atual != null) {
+            System.out.println(atual.getObjeto());
+            for (int i = 0; i < 116; i++)
+                System.out.print("-");
+            System.out.println();
+            atual = atual.getProximo();
+        }
     }
 
     @Override
-    public String fimInicio() {
-        String str = "\n";
-        Noh categoria = fim;
-
-        while (categoria != null) {
-            str += categoria.getObjeto() + "\n";
-            categoria = categoria.getAnterior();
+    public void fimInicio() {
+        if (estahVazia()) {
+            System.out.println("A lista está vazia.");
+            return;
         }
-
-        return str;
+        Noh atual = fim;
+        while (atual != null) {
+            System.out.println(atual.getObjeto());
+            for (int i = 0; i < 116; i++)
+                System.out.print("-");
+            System.out.println();
+            atual = atual.getAnterior();
+        }
     }
 }

@@ -10,14 +10,14 @@ public interface ILista {
 
     int tamanho();
 
-    Object remove(Object o);
+    boolean remove(Object o);
 
     Noh buscaPlaca(String placa);
 
     Noh buscaCategoria(int id);
 
-    String inicioFim();
+    void inicioFim();
 
-    String fimInicio();
+    void fimInicio();
 
 }

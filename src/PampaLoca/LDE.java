@@ -53,7 +53,7 @@ public class LDE implements ILista {
         return false;
     }
 
-    
+    @Override
     public Noh busca(int idCategoria) {
         Noh noh = inicio;
         while (noh != null) {
@@ -69,7 +69,7 @@ public class LDE implements ILista {
         return null;
     }
 
-    
+    @Override
     public Noh busca(String placaVeiculo) {
         Noh noh = inicio;
         while (noh != null) {

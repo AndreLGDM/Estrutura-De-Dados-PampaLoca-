@@ -1,5 +1,4 @@
-package Veiculo;
-import Categoria.Categoria;
+package PampaLoca;
 
 public class Veiculo {
     private String placaVeiculo;

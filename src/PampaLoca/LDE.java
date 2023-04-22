@@ -53,8 +53,8 @@ public class LDE implements ILista {
         return false;
     }
 
-    @Override
-    public Noh buscaCategoria(int idCategoria) {
+    
+    public Noh busca(int idCategoria) {
         Noh noh = inicio;
         while (noh != null) {
             Object objeto = noh.getObjeto();
@@ -69,8 +69,8 @@ public class LDE implements ILista {
         return null;
     }
 
-    @Override
-    public Noh buscaPlaca(String placaVeiculo) {
+    
+    public Noh busca(String placaVeiculo) {
         Noh noh = inicio;
         while (noh != null) {
             Object objeto = noh.getObjeto();
@@ -92,12 +92,12 @@ public class LDE implements ILista {
             System.out.print("Digite a id da categoria a ser removida: ");
             int idCategoria = in.nextInt();
             System.out.println();
-            nohRemovido = buscaCategoria(idCategoria);
+            nohRemovido = busca(idCategoria);
         } else if (objeto instanceof Veiculo) {
             System.out.print("Digite a placa do veículo a ser removido: ");
             String placaVeiculo = in.next();
             System.out.println();
-            nohRemovido = buscaPlaca(placaVeiculo);
+            nohRemovido = busca(placaVeiculo);
         }
         if (nohRemovido == null) {
             return false;

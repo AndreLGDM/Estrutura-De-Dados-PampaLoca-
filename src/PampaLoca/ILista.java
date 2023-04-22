@@ -12,9 +12,7 @@ public interface ILista {
 
     boolean remove(Object o);
 
-    Noh buscaPlaca(String placa);
-
-    Noh buscaCategoria(int id);
+    Noh busca();
 
     void inicioFim();
 

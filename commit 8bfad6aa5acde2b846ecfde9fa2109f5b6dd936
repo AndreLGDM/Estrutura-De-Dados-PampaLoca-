@@ -1,0 +1,161 @@
+[33mcommit d275dbc12de447d443fdc23210846a1365e62363[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:54:46 2023 -0300
+
+    init
+
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit a23e8b2845f5aa1bce63070557996a01a3437fb1[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:54:40 2023 -0300
+
+    class
+
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit 8bfad6aa5acde2b846ecfde9fa2109f5b6dd936a[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:54:05 2023 -0300
+
+    Não houve alterações
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit 63e635e829e56a845fc7ebb38f9119e5bce9aac0[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:53:37 2023 -0300
+
+    Transformada em LDE Generica
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit d95976aeb8dcc4eb138443bbbff329f525881d55[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:53:18 2023 -0300
+
+    Criada Interface da LDE
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit 4cce345dc99fec68aa6e85b177439843c9a192ec[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:52:50 2023 -0300
+
+    Feito testes apenas
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit b500a83e13d2f550aa3a238b528ab114fe23e218[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:52:03 2023 -0300
+
+    Transformado em noh generico
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit 2a30d8f612988830b92e24a3426788bee30f4b13[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:51:29 2023 -0300
+
+    Não houve mudanças
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit 9d35c835765a66c331f178c6a082ae1221671a23[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Fri Apr 21 22:48:53 2023 -0300
+
+    Não houve mudanças ainda
+    
+    Co-authored-by: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+
+[33mcommit 10bfee3c999bdf156f20596aea08365632b84cfa[m
+Author: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+Date:   Fri Apr 21 19:21:30 2023 -0300
+
+    Package
+
+[33mcommit b505328e5713c2aecc976cf49de59da121c713f0[m
+Author: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+Date:   Fri Apr 21 19:12:18 2023 -0300
+
+    merge
+
+[33mcommit caea546bb1d754520195999077cc8511a82335c1[m
+Merge: 457d4f6 11752cd
+Author: AndreLGDM <115878409+AndreLGDM@users.noreply.github.com>
+Date:   Fri Apr 21 19:06:34 2023 -0300
+
+    Merge pull request #4 from AndreLGDM/André
+    
+    André
+
+[33mcommit 11752cd96814b00bf313b6a099cbc5da2feef776[m[33m ([m[1;31morigin/André[m[33m)[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:56:18 2023 -0300
+
+    init
+
+[33mcommit 59f072cb7371085f14a96adde82ca536e0db595c[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:53:06 2023 -0300
+
+    init
+
+[33mcommit bc6ac6bc1d93962e11cb8c94e848b0550adeb941[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:52:54 2023 -0300
+
+    Esboço Menu
+
+[33mcommit 69f20839085f181bea3111bc8fefbd10b608b50a[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:52:44 2023 -0300
+
+    Esboço Locacao
+
+[33mcommit 457d4f630e522771916bec2254a739c017d96bd8[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:47:32 2023 -0300
+
+    Remoção Commit Errado
+
+[33mcommit 9fe255f28b2ac4151be7125c02ea8f13006404d4[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:39:05 2023 -0300
+
+    init
+
+[33mcommit 596217b39630a85f19b1a3574a1c25cefa126d7c[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:38:56 2023 -0300
+
+    Esboço Menu
+
+[33mcommit 2b601c01d7116b4fc62df0ceed51c5a09f425710[m
+Author: AndreLGDM <andremedeiros.aluno@unipampa.edu.br>
+Date:   Thu Apr 20 16:38:38 2023 -0300
+
+    Esboço Locação
+
+[33mcommit 7b2f1add7b6172c2f71cdc9639d1375f28df2e6a[m
+Merge: 4b028dc 31e7710
+Author: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+Date:   Thu Apr 20 08:41:42 2023 -0300
+
+    Merge pull request #2 from AndreLGDM/main
+    
+    Create Java Project
+
+[33mcommit 31e77105ea605d251695bf8b52ef24e6d57f1373[m
+Author: Bruno Nogueira <bruno.nogueira.bruno@gmail.com>
+Date:   Thu Apr 20 08:39:02 2023 -0300
+
+    Create Java Project
+
+[33mcommit 4b028dc1b5a505ec60c091b7ff31b2c594fe361c[m
+Author: AndreLGDM <115878409+AndreLGDM@users.noreply.github.com>
+Date:   Wed Apr 19 20:17:01 2023 -0300
+
+    Initial commit

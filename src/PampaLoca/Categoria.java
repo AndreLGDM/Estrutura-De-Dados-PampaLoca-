@@ -26,6 +26,6 @@ public class Categoria {
     }
 
     public String toString() {
-        return "Id: " + getIdCategoria() + " | Nome: " + getNomeCategoria();
+        return "Categoria {"+" Id: " + getIdCategoria() + " | Nome: " + getNomeCategoria()+" }";
     }
 }

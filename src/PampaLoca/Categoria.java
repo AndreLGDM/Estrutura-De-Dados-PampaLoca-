@@ -1,4 +1,4 @@
-package Categoria;
+package PampaLoca;
 
 public class Categoria {
     private int idCategoria;
@@ -9,14 +9,23 @@ public class Categoria {
         this.nomeCategoria = nomeCategoria;
     }
 
-    public int getIdCategoria() { return idCategoria; }
-    public void setIdCategoria(int idCategoria) { this.idCategoria = idCategoria; }
+    public int getIdCategoria() {
+        return idCategoria;
+    }
 
-    public String getNomeCategoria() { return nomeCategoria; }
-    
-    public void setNomeCategoria(String nomeCategoria) { this.nomeCategoria = nomeCategoria; }
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getNomeCategoria() {
+        return nomeCategoria;
+    }
+
+    public void setNomeCategoria(String nomeCategoria) {
+        this.nomeCategoria = nomeCategoria;
+    }
 
     public String toString() {
-        return "Id: "+getIdCategoria()+" | Nome: "+getNomeCategoria();
+        return "Id: " + getIdCategoria() + " | Nome: " + getNomeCategoria();
     }
 }

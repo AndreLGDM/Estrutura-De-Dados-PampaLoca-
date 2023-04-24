@@ -75,6 +75,6 @@ public class Veiculo {
     public String toString() {
         return "Veiculo {" + " Placa: " + getPlacaVeiculo() + " | Modelo: " + getModeloVeiculo() + " | Marca: "
                 + getMarcaVeiculo() + " | Ano: " + getAnoVeiculo() + " | Potência: " + getPotenciaVeiculo()
-                + " | Lugares: " + getLugaresVeiculo() + " | Categoria: " + categoria.getIdCategoria() + " }";
+                + " | Lugares: " + getLugaresVeiculo() + " | Categoria: " + categoria.getNomeCategoria() + " }";
     }
 }

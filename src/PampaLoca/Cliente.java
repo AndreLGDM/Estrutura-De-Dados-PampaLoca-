@@ -2,16 +2,14 @@ package PampaLoca;
 
 public class Cliente{
     private String nome;
-    private long CNH;
+    private String CNH;
     private String telefone;
-    private long CPF;
+    private String CPF;
     
-	public Cliente(String nome, long cNH, String telefone, long cPF) {
-		super();
-		this.nome = nome;
-		CNH = cNH;
-		this.telefone = telefone;
-		CPF = cPF;
+	public Cliente() {
+	}
+
+	public Cliente(String nome, String CNH, String Telefone, String CPF){
 	}
 
 	public String getNome() {
@@ -22,12 +20,12 @@ public class Cliente{
 		this.nome = nome;
 	}
 
-	public long getCNH() {
+	public String getCNH() {
 		return CNH;
 	}
 
-	public void setCNH(long cNH) {
-		CNH = cNH;
+	public void setCNH(String cNH) {
+		this.CNH = cNH;
 	}
 
 	public String getTelefone() {
@@ -38,12 +36,12 @@ public class Cliente{
 		this.telefone = telefone;
 	}
 
-	public long getCPF() {
+	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(long cPF) {
-		CPF = cPF;
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 
 	@Override

@@ -10,6 +10,8 @@ public class Main {
         ILista listaVeiculos = new LDE();
         ILista listaCategorias = new LDE();
         ILista listaClientes = new LDE();
+        ILista listaLocacoes = new LDE();
+
         Categoria cat1 = new Categoria(1111, "Carro");
         Categoria cat2 = new Categoria(1010, "Moto");
         listaCategorias.insereInicio(cat1);
@@ -19,6 +21,9 @@ public class Main {
         
         listaClientes.insereInicio(cliente1);
         listaVeiculos.insereFim(veiculo1);
+        Locacao loc = LocacaoFactory.criarLocacao(in, listaVeiculos, listaClientes);
+        listaLocacoes.insereInicio(loc);
+        listaLocacoes.inicioFim();
         listaVeiculos.inicioFim();
         listaClientes.inicioFim();
 

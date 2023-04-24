@@ -11,13 +11,9 @@ public class Veiculo {
 
     public Veiculo(String placaVeiculo, String modeloVeiculo, String marcaVeiculo, int anoVeiculo, int potenciaVeiculo,
             int lugaresVeiculo, Categoria categoria) {
-        this.placaVeiculo = placaVeiculo;
-        this.modeloVeiculo = modeloVeiculo;
-        this.marcaVeiculo = marcaVeiculo;
-        this.anoVeiculo = anoVeiculo;
-        this.potenciaVeiculo = potenciaVeiculo;
-        this.lugaresVeiculo = lugaresVeiculo;
-        this.categoria = categoria;
+    }
+
+    public Veiculo(){
     }
 
     public String getPlacaVeiculo() {

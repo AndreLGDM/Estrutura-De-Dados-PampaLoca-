@@ -5,6 +5,11 @@ public class Locacao {
     private Cliente cliente;
     private Veiculo veiculo;
 
+    public Locacao(Cliente c, Veiculo v){
+        this.cliente = c;
+        this.veiculo = v;
+    }
+
     public Locacao(){
     }
 
@@ -26,6 +31,6 @@ public class Locacao {
 
     @Override
     public String toString() {
-        return "Locação {" + veiculo.getPlacaVeiculo() +" "+ cliente.getCNH()+"}" ;
+        return "Locação { " + veiculo.getModeloVeiculo() +" - "+ cliente.getNome() + ", cnh: " +cliente.getCNH()+" }" ;
     }
 }

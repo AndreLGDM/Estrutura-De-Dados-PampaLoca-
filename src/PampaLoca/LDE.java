@@ -138,7 +138,7 @@ public class LDE implements ILista {
         Noh atual = inicio;
         while (atual != null) {
             System.out.println(atual.getObjeto());
-            for (int i = 0; i < 116; i++)
+            for (int i = 0; i < 122; i++)
                 System.out.print("-");
             System.out.println();
             atual = atual.getProximo();
@@ -154,7 +154,7 @@ public class LDE implements ILista {
         Noh atual = fim;
         while (atual != null) {
             System.out.println(atual.getObjeto());
-            for (int i = 0; i < 116; i++)
+            for (int i = 0; i < 122; i++)
                 System.out.print("-");
             System.out.println();
             atual = atual.getAnterior();

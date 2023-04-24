@@ -70,13 +70,23 @@ public class LDE implements ILista {
     }
 
     @Override
-    public Noh busca(String placaVeiculo) {
+    public Noh busca(String txt) {
         Noh noh = inicio;
         while (noh != null) {
             Object objeto = noh.getObjeto();
             if (objeto instanceof Veiculo) {
                 Veiculo veiculoBusca = (Veiculo) objeto;
-                if (veiculoBusca.getPlacaVeiculo().equals(placaVeiculo)) {
+                if (veiculoBusca.getPlacaVeiculo().equals(txt)) {
+                    return noh;
+                }
+            }else if (objeto instanceof Cliente) {
+                Cliente clienteBusca = (Cliente) objeto;
+                if (clienteBusca.getCPF().equals(txt)) {
+                    return noh;
+                }
+            }else if (objeto instanceof Locacao) {
+                Locacao LocacaoBusca = (Locacao) objeto;
+                if (LocacaoBusca.getVeiculo().getPlacaVeiculo().equals(txt)) {
                     return noh;
                 }
             }
@@ -98,8 +108,17 @@ public class LDE implements ILista {
             String placaVeiculo = in.next();
             System.out.println();
             nohRemovido = busca(placaVeiculo);
-        }
-        if (nohRemovido == null) {
+        } else if (objeto instanceof Locacao) {
+            System.out.print("Digite a placa do veículo atrelado a Locação: ");
+            String placaVeiculo = in.next();
+            System.out.println();
+            nohRemovido = busca(placaVeiculo);
+        } else if (objeto instanceof Cliente) {
+            System.out.print("Digite o cpf do cliente a ser removido: ");
+            String cpfCliente = in.next();
+            System.out.println();
+            nohRemovido = busca(cpfCliente);
+        }if (nohRemovido == null) {
             return false;
         }
         if (estahVazia()) {

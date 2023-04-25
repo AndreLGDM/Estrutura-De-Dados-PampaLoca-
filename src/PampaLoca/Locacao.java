@@ -33,6 +33,6 @@ public class Locacao {
 
     @Override
     public String toString() {
-        return "Locação { " + veiculo.getModeloVeiculo() +" - "+ cliente.getNome() + ", cnh: " +cliente.getCNH()+" }" ;
+        return "Locação { Modelo: " + veiculo.getModeloVeiculo() +" | Nome: "+ cliente.getNome() + " | CNH: " +cliente.getCNH()+" }" ;
     }
 }

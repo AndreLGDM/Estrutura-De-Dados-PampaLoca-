@@ -6,8 +6,10 @@ public class Locacao {
     private Veiculo veiculo;
 
     public Locacao(Cliente c, Veiculo v){
+        
         this.cliente = c;
         this.veiculo = v;
+        
     }
 
     public Locacao(){

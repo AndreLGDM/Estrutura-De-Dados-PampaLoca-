@@ -11,17 +11,22 @@ public class Main {
         ILista listaCategorias = new LDE();
         ILista listaClientes = new LDE();
         ILista listaLocacoes = new LDE();
+        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+        
+        listaVeiculos.inicioFim();
+        listaClientes.inicioFim();
+        listaLocacoes.inicioFim();
+        listaCategorias.inicioFim();
 
-        Categoria cat1 = new Categoria(1111, "Carro");
-        Categoria cat2 = new Categoria(1010, "Moto");
-        listaCategorias.insereInicio(cat1);
-        listaCategorias.insereFim(cat2);
         Cliente cliente1 = ClienteFactory.criarCliente(in);
+        Arquivo.gravarArquivoCSV(cliente1);
         Veiculo veiculo1 = VeiculoFactory.criarVeiculo(in, listaCategorias);
+        Arquivo.gravarArquivoCSV(veiculo1);
         
         listaClientes.insereInicio(cliente1);
         listaVeiculos.insereFim(veiculo1);
         Locacao loc = LocacaoFactory.criarLocacao(in, listaVeiculos, listaClientes);
+        Arquivo.gravarArquivoCSV(loc);
         listaLocacoes.insereInicio(loc);
         listaLocacoes.inicioFim();
         listaVeiculos.inicioFim();

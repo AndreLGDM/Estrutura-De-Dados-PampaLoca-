@@ -9,6 +9,9 @@ public class Categoria {
         this.nomeCategoria = nomeCategoria;
     }
 
+    public Categoria(){
+    }
+
     public int getIdCategoria() {
         return idCategoria;
     }

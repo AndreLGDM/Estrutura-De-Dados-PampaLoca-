@@ -8,14 +8,14 @@ public class Arquivo {
 
     public static void lerArquivoCSV(ILista ldeVeiculos, ILista ldeClientes, ILista ldeLocacao, ILista ldeCategorias){
         try{
-            File csvFile = new File("Veiculos.csv");
+            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Veiculos.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
                 String[] linhas = line.split(";");
-                Categoria categoria = new Categoria(0, linhas[6]);
+                Categoria categoria = new Categoria(Integer.parseInt(linhas[6]), line);
                 Veiculo v = new Veiculo(linhas[0], linhas[1], linhas[2], Integer.parseInt(linhas[3]), Integer.parseInt(linhas[4]), Integer.parseInt(linhas[5]), categoria); 
                 ldeVeiculos.insereFim(v);
             }
@@ -25,7 +25,7 @@ public class Arquivo {
         }
 
         try{
-            File csvFile = new File("Clientes.csv");
+            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Clientes.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
@@ -43,7 +43,7 @@ public class Arquivo {
         }
 
         try{
-            File csvFile = new File("Locações.csv");
+            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Locações.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
@@ -62,7 +62,7 @@ public class Arquivo {
         }
 
         try{
-            File csvFile = new File("Categorias.csv");
+            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Categorias.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
@@ -81,7 +81,7 @@ public class Arquivo {
     
     public static void gravarArquivoCSV(Cliente c) {
 
-        try (FileOutputStream fos = new FileOutputStream("Clientes.csv", true);
+        try (FileOutputStream fos = new FileOutputStream("Estrutura-De-Dados-PampaLoca-\\lib\\Clientes.csv", true);
         OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8)) {
 
             String data = String.join(";", c.getNome(), c.getCNH(), c.getTelefone(), c.getCPF());
@@ -96,7 +96,7 @@ public class Arquivo {
 
     public static void gravarArquivoCSV(Veiculo v) {
 
-        try (FileOutputStream fos = new FileOutputStream("Veiculos.csv", true);
+        try (FileOutputStream fos = new FileOutputStream("Estrutura-De-Dados-PampaLoca-\\lib\\Veiculos.csv", true);
                 OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8)) {
 
             String ano = Integer.toString(v.getAnoVeiculo());
@@ -115,7 +115,7 @@ public class Arquivo {
 
     public static void gravarArquivoCSV(Locacao l) {
         try {
-            FileOutputStream fos = new FileOutputStream("Locações.csv", true);
+            FileOutputStream fos = new FileOutputStream("Estrutura-De-Dados-PampaLoca-\\lib\\Locações.csv", true);
             OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
 
             String Modelo = l.getVeiculo().getModeloVeiculo().toString();
@@ -131,7 +131,7 @@ public class Arquivo {
     }
 
     public static void gravarArquivoCSV(Categoria c){
-        try (FileOutputStream fos = new FileOutputStream("Categorias.csv", true);
+        try (FileOutputStream fos = new FileOutputStream("Estrutura-De-Dados-PampaLoca-\\lib\\Categorias.csv", true);
         OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8)) {
 
             String Id = Integer.toString(c.getIdCategoria());

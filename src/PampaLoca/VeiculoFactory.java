@@ -8,9 +8,9 @@ public class VeiculoFactory {
         Veiculo v = new Veiculo();
         boolean placaValida = false;
         do {
-            System.out.print("Digite a placa do veiculo (formato AAA-1B23): ");
+            System.out.print("Digite a placa do veiculo (formato AAA-1B23 ou AAA-1234): ");
             String placa = in.next().trim();
-            if (placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}")) {
+            if (placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || placa.matches("[A-Z]{3}-\\d{4}")) {
                 v.setPlacaVeiculo(placa);
                 placaValida = true;
             } else {

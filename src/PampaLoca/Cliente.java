@@ -1,7 +1,8 @@
 package PampaLoca;
 
 public class Cliente{
-    private String nome;
+    
+	private String nome;
     private String CNH;
     private String telefone;
     private String CPF;
@@ -9,7 +10,11 @@ public class Cliente{
 	public Cliente() {
 	}
 
-	public Cliente(String nome, String CNH, String Telefone, String CPF){
+	public Cliente(String nome, String CNH){
+		
+		this.nome = nome;
+		this.CNH = CNH;
+
 	}
 
 	public String getNome() {

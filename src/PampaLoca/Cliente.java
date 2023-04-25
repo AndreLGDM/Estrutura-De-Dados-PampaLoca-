@@ -17,6 +17,15 @@ public class Cliente{
 
 	}
 
+	public Cliente(String nome, String CNH, String Telefone, String CPF){
+		
+		this.nome = nome;
+		this.CNH = CNH;
+		this.telefone = Telefone;
+		this.CPF = CPF;
+		
+	}
+
 	public String getNome() {
 		return nome;
 	}

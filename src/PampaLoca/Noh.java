@@ -6,9 +6,11 @@ public class Noh {
     private Noh proximo;
 
     public Noh(Object objeto) {
+        
         this.objeto = objeto;
         this.anterior = null;
         this.proximo = null;
+        
     }
 
     public Object getObjeto() { return objeto; }

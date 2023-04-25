@@ -31,4 +31,8 @@ public class Categoria {
     public String toString() {
         return "Categoria {"+" Id: " + getIdCategoria() + " | Nome: " + getNomeCategoria()+" }";
     }
+
+    public static String toString(Categoria categoria) {
+        return null;
+    }
 }

@@ -17,7 +17,7 @@ public class LocacaoFactory {
             do {
                 System.out.print("Digite a placa do veiculo (formato AAA-1B23): ");
                 Placa = in.next().trim();
-                if (Placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}")) {
+                if (Placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || Placa.matches("[A-Z]{3}-\\d{4}")) {
                     placaValida = true;
                 } else {
                     System.out.println("Placa inválida. Por favor, digite novamente.");

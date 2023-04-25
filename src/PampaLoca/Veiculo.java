@@ -9,8 +9,10 @@ public class Veiculo {
     private int lugaresVeiculo;
     private Categoria categoria;
 
-    public Veiculo(String placaVeiculo, String modeloVeiculo, String marcaVeiculo, int anoVeiculo, int potenciaVeiculo,
-            int lugaresVeiculo, Categoria categoria) {
+    public Veiculo(String modeloVeiculo) {
+        
+            this.modeloVeiculo = modeloVeiculo;
+
     }
 
     public Veiculo(){

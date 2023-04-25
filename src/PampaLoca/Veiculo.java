@@ -1,6 +1,7 @@
 package PampaLoca;
 
 public class Veiculo {
+    
     private String placaVeiculo;
     private String modeloVeiculo;
     private String marcaVeiculo;
@@ -10,12 +11,25 @@ public class Veiculo {
     private Categoria categoria;
 
     public Veiculo(String modeloVeiculo) {
-        
-            this.modeloVeiculo = modeloVeiculo;
+
+        this.modeloVeiculo = modeloVeiculo;
 
     }
 
-    public Veiculo(){
+    public Veiculo(String placaVeiculo, String modeloVeiculo, String marcaVeiculo, int anoVeiculo, int potenciaVeiculo,
+            int lugaresVeiculo, Categoria categoria) {
+
+        this.placaVeiculo = placaVeiculo;
+        this.modeloVeiculo = modeloVeiculo;
+        this.marcaVeiculo = marcaVeiculo;
+        this.anoVeiculo = anoVeiculo;
+        this.potenciaVeiculo = potenciaVeiculo;
+        this.lugaresVeiculo = lugaresVeiculo;
+        this.categoria = categoria;
+
+    }
+
+    public Veiculo() {
     }
 
     public String getPlacaVeiculo() {
@@ -77,6 +91,6 @@ public class Veiculo {
     public String toString() {
         return "Veiculo {" + " Placa: " + getPlacaVeiculo() + " | Modelo: " + getModeloVeiculo() + " | Marca: "
                 + getMarcaVeiculo() + " | Ano: " + getAnoVeiculo() + " | Potência: " + getPotenciaVeiculo()
-                + " | Lugares: " + getLugaresVeiculo() + " | Categoria: " + categoria.getNomeCategoria() + " }";
+                + " | Lugares: " + getLugaresVeiculo() + " | Categoria: " + categoria.getIdCategoria() + " }";
     }
 }

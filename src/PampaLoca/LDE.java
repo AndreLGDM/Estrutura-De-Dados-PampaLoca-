@@ -15,6 +15,14 @@ public class LDE implements ILista {
         this.fim = null;
     }
 
+    public Noh getInicio() {
+        return inicio;
+    }
+
+    public Noh getFim() {
+        return fim;
+    }
+
     @Override
     public void insereInicio(Object o) {
         Noh novo = new Noh(o);

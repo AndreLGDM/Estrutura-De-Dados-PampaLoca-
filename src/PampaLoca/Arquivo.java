@@ -8,7 +8,7 @@ public class Arquivo {
 
     public static void lerArquivoCSV(ILista ldeVeiculos, ILista ldeClientes, ILista ldeLocacao, ILista ldeCategorias){
         try{
-            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Veiculos.csv");
+            File csvFile = new File("lib\\Veiculos.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
@@ -25,7 +25,7 @@ public class Arquivo {
         }
 
         try{
-            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Clientes.csv");
+            File csvFile = new File("lib\\Clientes.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
@@ -43,7 +43,7 @@ public class Arquivo {
         }
 
         try{
-            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Locações.csv");
+            File csvFile = new File("lib\\Locações.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();
@@ -62,7 +62,7 @@ public class Arquivo {
         }
 
         try{
-            File csvFile = new File("Estrutura-De-Dados-PampaLoca-\\lib\\Categorias.csv");
+            File csvFile = new File("lib\\Categorias.csv");
             Scanner fileScanner = new Scanner(csvFile);
 
             fileScanner.nextLine();

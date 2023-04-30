@@ -44,13 +44,13 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="203.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="203.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/PampaLocaIcon.png" />
                </image>
             </ImageView>
             <Button fx:id="buttonListarVeiculos" layoutX="50.0" layoutY="227.0" mnemonicParsing="false" onAction="#ListarVeiculos" text="Listar Veiculos" />
-            <Text layoutX="186.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Veiculos">
+            <Text layoutX="201.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Veiculos">
                <font>
                   <Font size="36.0" />
                </font>

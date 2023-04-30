@@ -48,7 +48,7 @@
             <Button fx:id="buttonVeiculos" layoutX="544.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuVeiculos" text="Veiculos" />
             <Button layoutX="376.0" layoutY="230.0" mnemonicParsing="false" text="Categorias" />
             <Button layoutX="214.0" layoutY="230.0" mnemonicParsing="false" text="Locações" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="214.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="203.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/PampaLocaIcon.png" />
                </image>

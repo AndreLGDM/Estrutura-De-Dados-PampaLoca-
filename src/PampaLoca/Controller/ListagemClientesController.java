@@ -30,7 +30,7 @@ public class ListagemClientesController {
     @FXML
     public void initialize() {
 
-        txtAreaClientes.setStyle("-fx-text-fill: #FF69B4;");
+        txtAreaClientes.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
             linhaTracejada += "-";

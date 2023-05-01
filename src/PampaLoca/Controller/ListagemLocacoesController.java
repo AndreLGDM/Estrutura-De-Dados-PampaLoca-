@@ -30,7 +30,7 @@ public class ListagemLocacoesController {
     @FXML
     public void initialize() {
 
-        txtAreaLocacoes.setStyle("-fx-text-fill: #FF69B4;");
+        txtAreaLocacoes.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
             linhaTracejada += "-";

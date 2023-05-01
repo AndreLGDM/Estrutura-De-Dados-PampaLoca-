@@ -30,7 +30,7 @@ public class ListagemVeiculosController {
     @FXML
     public void initialize() {
 
-        txtAreaVeiculos.setStyle("-fx-text-fill: #FF69B4;");
+        txtAreaVeiculos.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
             linhaTracejada += "-";

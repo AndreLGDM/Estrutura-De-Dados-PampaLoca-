@@ -30,7 +30,7 @@ public class ListagemCategoriasController {
     @FXML
     public void initialize() {
 
-        txtAreaCategorias.setStyle("-fx-text-fill: #FF69B4;");
+        txtAreaCategorias.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
             linhaTracejada += "-";

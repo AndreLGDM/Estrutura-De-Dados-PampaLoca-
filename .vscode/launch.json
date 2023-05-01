@@ -1,7 +1,7 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -14,10 +14,10 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "PampaLoca.Main",
-            "projectName": "Estrutura-De-Dados-PampaLoca-_32cea50f",
-            "vmArgs": "--module-path \"C:/Users/andre/OneDrive/Documents/JavaFX/javafx-sdk-20.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
-            "icon": "PampaLoca/Images/PampaLocaIcon.ico"
+            "mainClass": "Main",
+            "projectName": "ssvfdgbfhndgbvfc_ee53b0d1",
+            "vmArgs": "--module-path \"C:/Users/Usuário/Downloads/javafx-sdk-20.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        
         }
     ]
 }

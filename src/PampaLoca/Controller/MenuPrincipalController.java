@@ -17,6 +17,48 @@ public class MenuPrincipalController {
     private Button buttonVeiculos;
 
     @FXML
+    private Button buttonClientes;
+
+    @FXML
+    private Button buttonLocacoes;
+
+    @FXML
+    private Button buttonCategorias;
+
+    @FXML
+    void irMenuCategorias(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
+
+    @FXML
+    void irMenuLocacoes(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuLocacoes.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
+
+    @FXML
+    void irMenuClientes(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuClientes.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
+
+    @FXML
     void irMenuVeiculos(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FMXL/MenuVeiculos.fxml"));
         Scene tela = new Scene(root);

@@ -11,14 +11,14 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class MenuVeiculosController {
+public class MenuCategoriasController {
 
     @FXML
-    private Button buttonListarVeiculos;
+    private Button buttonListarCategorias;
 
     @FXML
-    void ListarVeiculos(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/ListagemVeiculos.fxml"));
+    void ListarCategorias(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/ListagemCategorias.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

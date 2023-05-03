@@ -49,12 +49,13 @@
                   <Image url="@../Images/PampaLocaIcon.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonListarCategorias" layoutX="61.0" layoutY="230.0" mnemonicParsing="false" onAction="#ListarCategorias" text="Listar Categorias" />
+            <Button fx:id="buttonListarCategorias" layoutX="214.0" layoutY="230.0" mnemonicParsing="false" onAction="#ListarCategorias" text="Listar Categorias" />
             <Text layoutX="201.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Categorias">
                <font>
                   <Font size="36.0" />
                </font>
             </Text>
+            <Button fx:id="buttonCriarCategoria" layoutX="61.0" layoutY="230.0" mnemonicParsing="false" onAction="#irCadastroCategoria" text="Cadastrar Categoria" />
          </children>
     </AnchorPane>
   </children>

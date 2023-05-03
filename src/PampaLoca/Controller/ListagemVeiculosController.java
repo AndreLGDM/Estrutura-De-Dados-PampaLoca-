@@ -25,11 +25,16 @@ public class ListagemVeiculosController {
     @FXML
     private Button buttonOK;
 
+    @FXML
+    private Button buttonInicio;
+
+    @FXML
+    private Button buttonFim;
+
     String lista = "";
 
     @FXML
     public void initialize() {
-
         txtAreaVeiculos.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
@@ -50,6 +55,58 @@ public class ListagemVeiculosController {
         while (atual != null) {
             lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
             atual = atual.getProximo();
+        }
+        txtAreaVeiculos.setText(lista);
+    }
+
+    public void inicioFim(ActionEvent event) throws IOException{
+        String lista = "";
+        txtAreaVeiculos.setStyle("-fx-text-fill: BLACK");
+        String linhaTracejada = "";
+        for (int i = 0; i < 132; i++) {
+            linhaTracejada += "-";
+        }
+        ILista listaVeiculos = new LDE();
+        ILista listaCategorias = new LDE();
+        ILista listaClientes = new LDE();
+        ILista listaLocacoes = new LDE();
+        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+
+        if (listaVeiculos.estahVazia()) {
+            txtAreaVeiculos.setText("A lista está vazia.");
+            return;
+        }
+        LDE listaVeiculosAtt = (LDE) listaVeiculos;
+        Noh atual = listaVeiculosAtt.getInicio();
+        while (atual != null) {
+            lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
+            atual = atual.getProximo();
+        }
+        txtAreaVeiculos.setText(lista);
+    }
+
+    public void fimInicio(ActionEvent event) throws IOException{
+        String lista = "";
+        txtAreaVeiculos.setStyle("-fx-text-fill: BLACK");
+        String linhaTracejada = "";
+        for (int i = 0; i < 132; i++) {
+            linhaTracejada += "-";
+        }
+        ILista listaVeiculos = new LDE();
+        ILista listaCategorias = new LDE();
+        ILista listaClientes = new LDE();
+        ILista listaLocacoes = new LDE();
+        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+
+        if (listaVeiculos.estahVazia()) {
+            txtAreaVeiculos.setText("A lista está vazia.");
+            return;
+        }
+        LDE listaVeiculosAtt = (LDE) listaVeiculos;
+        Noh atual = listaVeiculosAtt.getFim();
+        while (atual != null) {
+            lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
+            atual = atual.getAnterior();
         }
         txtAreaVeiculos.setText(lista);
     }

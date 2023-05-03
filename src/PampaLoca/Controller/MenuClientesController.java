@@ -21,6 +21,9 @@ public class MenuClientesController {
 
     @FXML
     private Button voltar;
+
+    @FXML
+    private Button buttonExcluirCliente;
     
     @FXML
     void apagarCliente(ActionEvent event) throws IOException{

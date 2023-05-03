@@ -87,6 +87,8 @@ public class MenuCadastrarLocacoesController {
  
         
         Locacao locacaoGerada = new Locacao(clienteObjeto, veiculoObjeto);
+        locacaoGerada.setDataDeRetirada(data1.getValue());
+        locacaoGerada.setDataDeDevolucao(data2.getValue());
         Arquivo.gravarArquivoCSV(locacaoGerada);
         Locacoes.insereFim(locacaoGerada);
         }

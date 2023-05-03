@@ -20,7 +20,21 @@ public class MenuLocacoesController {
     private Button buttonCadastrarLocacao;
 
     @FXML
+    private Button buttonExcluirLocacao;
+
+    @FXML
     private Button voltar;
+
+    @FXML
+    void apagarLocacao(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuExcluirLocacao.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
 
     @FXML
     void ListarLocacoes(ActionEvent event) throws IOException {

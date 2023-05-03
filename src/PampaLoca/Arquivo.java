@@ -2,6 +2,8 @@ package PampaLoca;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Arquivo {
@@ -45,21 +47,25 @@ public class Arquivo {
         try{
             File csvFile = new File("lib\\Locações.csv");
             Scanner fileScanner = new Scanner(csvFile);
-
+        
             fileScanner.nextLine();
             while (fileScanner.hasNextLine()) {
                 String[] linhas = fileScanner.nextLine().split(";");
                 Veiculo v = new Veiculo(linhas[0]);
-                //novamente checar se esse construtor funciona com a classe categoria no 0 final
                 Cliente c = new Cliente(linhas[1], linhas[2]);
-                Locacao L = new Locacao(c, v);
+        
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate dataDeRetirada = LocalDate.parse(linhas[3], formatter);
+                LocalDate dataDeDevolucao = LocalDate.parse(linhas[4], formatter);
+        
+                Locacao L = new Locacao(c, v, dataDeRetirada, dataDeDevolucao);
                 ldeLocacao.insereFim(L);
-
             }
             fileScanner.close();
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        
 
         try{
             File csvFile = new File("lib\\Categorias.csv");
@@ -117,18 +123,21 @@ public class Arquivo {
         try {
             FileOutputStream fos = new FileOutputStream("lib\\Locações.csv", true);
             OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
-
-            String Modelo = l.getVeiculo().getModeloVeiculo().toString();
-            String Nome = l.getCliente().getNome().toString();
-            String CNH = l.getCliente().getCNH().toString();
-
-            String data = Modelo + ";" + Nome + ";" + CNH;
+    
+            String modelo = l.getVeiculo().getModeloVeiculo().toString();
+            String nome = l.getCliente().getNome().toString();
+            String cnh = l.getCliente().getCNH().toString();
+            String dataRetirada = l.getDataDeRetirada().toString();
+            String dataDevolucao = l.getDataDeDevolucao().toString();
+    
+            String data = modelo + ";" + nome + ";" + cnh + ";" + dataRetirada + ";" + dataDevolucao;
             osw.write(data);
             osw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
 
     public static void gravarArquivoCSV(Categoria c){
         try (FileOutputStream fos = new FileOutputStream("lib\\Categorias.csv", true);

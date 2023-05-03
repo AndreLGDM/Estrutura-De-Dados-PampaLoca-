@@ -20,6 +20,9 @@ public class MenuLocacoesController {
     private Button buttonCadastrarLocacao;
 
     @FXML
+    private Button voltar;
+
+    @FXML
     void ListarLocacoes(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/ListagemLocacoes.fxml"));
         Parent root = fxmlLoader.load();
@@ -41,4 +44,14 @@ public class MenuLocacoesController {
         stage.show();
     }
 
+    @FXML
+    void voltarMenuInicial(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuPrincipal.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
 }

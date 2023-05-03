@@ -45,6 +45,9 @@ public class MenuCadastrarClientesController {
     private TextField txtTelefone;
 
     @FXML
+    private Button voltar;
+
+    @FXML
     public void initialize() {
         cnhInvalida.setVisible(false);
         cpfInvalido.setVisible(false);
@@ -90,4 +93,14 @@ public class MenuCadastrarClientesController {
         }
     }
 
-}
+    @FXML
+    void voltarMenuClientes(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuClientes.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
+    }

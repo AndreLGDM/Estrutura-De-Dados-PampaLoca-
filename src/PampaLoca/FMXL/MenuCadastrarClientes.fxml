@@ -75,6 +75,7 @@
                   <Font size="10.0" />
                </font>
             </Label>
+            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuClientes" text="Voltar" />
          </children>
     </AnchorPane>
   </children>

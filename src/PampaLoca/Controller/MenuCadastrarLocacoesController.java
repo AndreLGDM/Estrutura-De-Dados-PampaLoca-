@@ -48,6 +48,9 @@ public class MenuCadastrarLocacoesController {
     private TextField txtValor;
 
     @FXML
+    private Button voltar;
+
+    @FXML
     public void initialize() {
         cpfInvalido.setVisible(false);
         placaInvalido.setVisible(false);
@@ -95,6 +98,17 @@ public class MenuCadastrarLocacoesController {
         }
 
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuLocacoes.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
+
+    @FXML
+    void voltarMenuLocacoes(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuLocacoes.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);

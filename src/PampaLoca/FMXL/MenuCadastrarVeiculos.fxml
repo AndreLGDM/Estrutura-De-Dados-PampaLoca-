@@ -64,6 +64,7 @@
             <TextField fx:id="txtLugares" layoutX="369.0" layoutY="204.0" promptText="N° Lugares" />
             <TextField fx:id="txtCategoria" layoutX="369.0" layoutY="269.0" promptText="Categoria Veículo" />
             <Button fx:id="buttonCadastrar" layoutX="419.0" layoutY="328.0" mnemonicParsing="false" onAction="#GerarVeiculo" text="Cadastrar" />
+            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuVeiculos" text="Voltar" />
          </children>
     </AnchorPane>
   </children>

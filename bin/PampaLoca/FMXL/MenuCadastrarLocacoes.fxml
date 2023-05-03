@@ -73,6 +73,7 @@
             <DatePicker fx:id="data2" layoutX="80.0" layoutY="301.0" />
             <Text layoutX="80.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o valor da locação:" />
             <TextField fx:id="txtValor" layoutX="80.0" layoutY="362.0" prefHeight="25.0" prefWidth="181.0" promptText="R$" />
+            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuLocacoes" text="Voltar" />
          </children>
     </AnchorPane>
   </children>

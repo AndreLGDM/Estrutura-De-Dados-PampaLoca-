@@ -29,6 +29,9 @@ public class MenuCadastrarCategoriasController {
     private TextField txtNomeCategoria;
 
     @FXML
+    private Button voltar;
+
+    @FXML
     public void initialize() {
         IdInvalido.setVisible(false);
     }
@@ -57,6 +60,17 @@ public class MenuCadastrarCategoriasController {
             root.setStyle("-fx-background-color: LIGHTBLUE");
             stage.show();
         }
+    }
+
+    @FXML
+    void voltarMenuCategorias(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
     }
 
 }

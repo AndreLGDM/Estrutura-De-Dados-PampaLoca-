@@ -2,6 +2,12 @@ package PampaLoca.Controller;
 
 import java.io.IOException;
 
+import PampaLoca.Arquivo;
+import PampaLoca.Categoria;
+import PampaLoca.ILista;
+import PampaLoca.LDE;
+import PampaLoca.Noh;
+import PampaLoca.Veiculo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

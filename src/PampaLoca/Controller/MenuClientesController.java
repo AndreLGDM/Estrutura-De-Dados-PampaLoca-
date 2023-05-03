@@ -22,6 +22,7 @@ public class MenuClientesController {
     @FXML
     private Button voltar;
     
+    @FXML
     void apagarCliente(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuExcluirCliente.fxml"));
         Parent root = fxmlLoader.load();

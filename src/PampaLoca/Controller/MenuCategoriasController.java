@@ -17,6 +17,20 @@ public class MenuCategoriasController {
     private Button buttonListarCategorias;
 
     @FXML
+    private Button buttonCriarCategoria;
+
+    @FXML
+    void irCadastroCategoria(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCadastrarCategorias.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
+
+    @FXML
     void ListarCategorias(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/ListagemCategorias.fxml"));
         Parent root = fxmlLoader.load();

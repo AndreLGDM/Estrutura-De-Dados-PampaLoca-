@@ -28,6 +28,9 @@ public class MenuExcluirClienteController {
     private Label cpfInvalido;
 
     @FXML
+    private Label clienteLocado;
+
+    @FXML
     private Button buttonBuscar;
 
     @FXML
@@ -71,10 +74,12 @@ public class MenuExcluirClienteController {
         cpfInvalido.setVisible(false);
         excluirNao.setVisible(false);
         excluirSim.setVisible(false);
+        clienteLocado.setVisible(false);
     }
 
     @FXML
     void buscarCliente(ActionEvent event) {
+        clienteLocado.setVisible(false);
         String busca = txtBusca.getText();
         if (!busca.matches("[0-9]+")) {
             cpfInvalido.setVisible(true);
@@ -107,7 +112,6 @@ public class MenuExcluirClienteController {
 
     @FXML
     void confirmarExcluir(ActionEvent event) throws IOException {
-        
         String busca = txtBusca.getText();
         ILista listaVeiculos = new LDE();
         ILista listaCategorias = new LDE();
@@ -129,16 +133,46 @@ public class MenuExcluirClienteController {
 
     @FXML
     void excluirCliente(ActionEvent event) {
-        buttonBuscar.setVisible(false);
-        txtBusca.setVisible(false);
-        digiteCPF.setVisible(false);
-        Cliente.setVisible(false);
-        txtArea.setVisible(false);
-        buttonExcluir.setVisible(false);
-        Cliente.setVisible(false);
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        buttonEscolha.setVisible(true);
+        String busca = txtBusca.getText();
+        ILista listaVeiculos = new LDE();
+        ILista listaCategorias = new LDE();
+        ILista listaClientes = new LDE();
+        ILista listaLocacoes = new LDE();
+        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+        Noh Clientes;
+        Clientes = listaClientes.busca(busca);
+        boolean clienteEncontrado = false;
+        if (Clientes != null) {
+            Cliente clienteAchado = (Cliente) Clientes.getObjeto();
+            Noh locacoes;
+            LDE listaATT = (LDE) listaLocacoes;
+            locacoes = listaATT.getInicio();
+            Locacao locExistente = (Locacao) locacoes.getObjeto();
+            while (locacoes != null) {
+                if (locExistente.getCliente().getCNH().equals(clienteAchado.getCNH())) {
+                    clienteLocado.setVisible(true);
+                    clienteEncontrado = true;
+                } else {
+                    String cliente = clienteAchado.toString();
+                    txtArea.setText(cliente);
+                }
+                locacoes = locacoes.getProximo();
+            }
+
+            if (clienteEncontrado == false) {
+                buttonBuscar.setVisible(false);
+                txtBusca.setVisible(false);
+                digiteCPF.setVisible(false);
+                Cliente.setVisible(false);
+                txtArea.setVisible(false);
+                buttonExcluir.setVisible(false);
+                Cliente.setVisible(false);
+                clienteInexistente.setVisible(false);
+                cpfInvalido.setVisible(false);
+                buttonEscolha.setVisible(true);
+                clienteLocado.setVisible(false);
+            }
+        }
     }
 
     @FXML

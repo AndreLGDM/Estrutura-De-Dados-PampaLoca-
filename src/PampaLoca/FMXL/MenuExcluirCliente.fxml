@@ -87,6 +87,11 @@
                </font>
             </Label>
             <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuClientes" text="Voltar" />
+            <Label fx:id="clienteLocado" layoutX="168.0" layoutY="286.0" text="Cliente Alocado!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children>
     </AnchorPane>
   </children>

@@ -60,7 +60,7 @@ public class Cliente{
 
 	@Override
 	public String toString() {
-		return "Cliente {" + " Nome: " + nome + " | CNH: " + CNH + " | Telefone: " + telefone + " | CPF: " + CPF + " } ";
+		return "Cliente {" + " Nome: " + getNome() + " | CNH: " + getCNH() + " | Telefone: " + getTelefone() + " | CPF: " + getCPF() + " } ";
 	}
     
 }

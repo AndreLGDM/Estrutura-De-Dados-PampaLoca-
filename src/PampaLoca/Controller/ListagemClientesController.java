@@ -25,11 +25,16 @@ public class ListagemClientesController {
     @FXML
     private Button buttonOK;
 
+    @FXML
+    private Button buttonInicio;
+
+    @FXML
+    private Button buttonFim;
+
     String lista = "";
 
     @FXML
     public void initialize() {
-
         txtAreaClientes.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
@@ -52,6 +57,58 @@ public class ListagemClientesController {
             atual = atual.getProximo();
         }
         txtAreaClientes.setText(lista);
+    }
+
+    public void inicioFim(ActionEvent event) throws IOException{
+    String lista = "";
+    txtAreaClientes.setStyle("-fx-text-fill: BLACK");
+    String linhaTracejada = "";
+    for (int i = 0; i < 132; i++) {
+        linhaTracejada += "-";
+    }
+    ILista listaVeiculos = new LDE();
+    ILista listaCategorias = new LDE();
+    ILista listaClientes = new LDE();
+    ILista listaLocacoes = new LDE();
+    Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+
+    if (listaClientes.estahVazia()) {
+        txtAreaClientes.setText("A lista está vazia.");
+        return;
+    }
+    LDE listaClientesAtt = (LDE) listaClientes;
+    Noh atual = listaClientesAtt.getInicio();
+    while (atual != null) {
+        lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
+        atual = atual.getProximo();
+    }
+    txtAreaClientes.setText(lista);
+    }
+
+    public void fimInicio(ActionEvent event) throws IOException{
+        String lista = "";
+            txtAreaClientes.setStyle("-fx-text-fill: BLACK");
+            String linhaTracejada = "";
+            for (int i = 0; i < 132; i++) {
+                linhaTracejada += "-";
+            }
+            ILista listaVeiculos = new LDE();
+            ILista listaCategorias = new LDE();
+            ILista listaClientes = new LDE();
+            ILista listaLocacoes = new LDE();
+            Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+
+            if (listaClientes.estahVazia()) {
+                txtAreaClientes.setText("A lista está vazia.");
+                return;
+            }
+            LDE listaClientesAtt = (LDE) listaClientes;
+            Noh atual = listaClientesAtt.getFim();
+            while (atual != null) {
+                lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
+                atual = atual.getAnterior();
+            }
+            txtAreaClientes.setText(lista);
     }
 
     @FXML

@@ -57,6 +57,7 @@
             </Text>
             <Button fx:id="buttonCriarVeiculo" layoutX="61.0" layoutY="230.0" mnemonicParsing="false" onAction="#irCadastroVeiculo" text="Cadastrar Veiculo" />
             <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuInicial" text="Voltar" />
+            <Button fx:id="buttonExcluirVeiculo" layoutX="338.0" layoutY="230.0" mnemonicParsing="false" onAction="#apagarVeiculo" text="Excluir Veiculo" />
          </children>
     </AnchorPane>
   </children>

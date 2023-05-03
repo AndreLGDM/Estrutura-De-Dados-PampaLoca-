@@ -54,28 +54,39 @@
                   <Image url="@../Images/PampaLocaIcon.png" />
                </image>
             </ImageView>
-            <Text fx:id="digiteCPF" layoutX="149.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o CPF do cliente que deseja Excluir:" />
-            <TextField fx:id="txtBusca" layoutX="149.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite o CPF" />
-            <Button fx:id="buttonBuscar" layoutX="268.0" layoutY="221.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar" />
-            <Text fx:id="Cliente" layoutX="149.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" />
-            <TextArea fx:id="txtArea" layoutX="149.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" />
-            <Button fx:id="buttonExcluir" layoutX="370.0" layoutY="221.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
-            <SplitMenuButton fx:id="buttonEscolha" layoutX="205.0" layoutY="181.0" mnemonicParsing="false" text="Realmente Deseja Excluir?">
+            <Text fx:id="digiteCPF" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o CPF do cliente que deseja Excluir:" />
+            <TextField fx:id="txtBusca" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite o CPF" />
+            <Button fx:id="buttonBuscar" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar" />
+            <Text fx:id="Cliente" layoutX="168.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" />
+            <TextArea fx:id="txtArea" layoutX="168.0" layoutY="249.0" prefHeight="25.0" prefWidth="273.0" />
+            <Button fx:id="buttonExcluir" layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
+            <SplitMenuButton fx:id="buttonEscolha" layoutX="216.0" layoutY="210.0" mnemonicParsing="false" text="Realmente Deseja Excluir?">
               <items>
-                <MenuItem fx:id="buttonSim" mnemonicParsing="false" onAction="#confirmarExcluir" text="SIM" />
+                <MenuItem fx:id="buttonSim" mnemonicParsing="false" onAction="#confirmarExcluir" text="Sim" />
                 <MenuItem fx:id="buttonNão" mnemonicParsing="false" onAction="#negarExcluir" text="Não" />
               </items>
             </SplitMenuButton>
-            <Label fx:id="cpfInvalido" layoutX="150.0" layoutY="199.0" text="CPF invalido!" textFill="RED">
+            <Label fx:id="cpfInvalido" layoutX="168.0" layoutY="199.0" text="CPF invalido!" textFill="RED">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="clienteInexistente" layoutX="150.0" layoutY="199.0" text="Cliente inexistente!" textFill="RED">
+            <Label fx:id="clienteInexistente" layoutX="168.0" layoutY="199.0" text="Cliente inexistente!" textFill="RED">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
+            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Cliente excluido com sucesso!" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="excluirNao" layoutX="240.0" layoutY="224.0" text="Exclusão cancelada!" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuClientes" text="Voltar" />
          </children>
     </AnchorPane>
   </children>

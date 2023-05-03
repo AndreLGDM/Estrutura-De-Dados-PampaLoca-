@@ -5,6 +5,9 @@ import java.io.IOException;
 import PampaLoca.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -12,6 +15,9 @@ import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+
 
 public class MenuExcluirClienteController {
 
@@ -49,13 +55,22 @@ public class MenuExcluirClienteController {
     private TextField txtBusca;
 
     @FXML
+    private Button voltar;
+
+    @FXML
+    private Label excluirNao;
+
+    @FXML
+    private Label excluirSim;
+
+    @FXML
     public void initialize() {
-        txtArea.setVisible(false);
         buttonEscolha.setVisible(false);
         buttonExcluir.setVisible(false);
-        Cliente.setVisible(false);
         clienteInexistente.setVisible(false);
         cpfInvalido.setVisible(false);
+        excluirNao.setVisible(false);
+        excluirSim.setVisible(false);
     }
 
     @FXML
@@ -63,6 +78,7 @@ public class MenuExcluirClienteController {
         String busca = txtBusca.getText();
         if (!busca.matches("[0-9]+")) {
             cpfInvalido.setVisible(true);
+            clienteInexistente.setVisible(false);
         } else {
 
             cpfInvalido.setVisible(false);
@@ -76,17 +92,13 @@ public class MenuExcluirClienteController {
             if (Clientes != null) {
                 String cliente = "";
                 clienteInexistente.setVisible(false);
-                digiteCPF.setVisible(false);
-                txtBusca.setVisible(false);
-                buttonBuscar.setVisible(false);
-                Cliente.setVisible(true);
-                txtArea.setVisible(true);
                 buttonExcluir.setVisible(true);
                 Cliente clienteEncontrado = (Cliente) Clientes.getObjeto();
                 cliente = clienteEncontrado.toString();
                 txtArea.setText(cliente);
             } else {
                 clienteInexistente.setVisible(true);
+                cpfInvalido.setVisible(false);
             }
 
         }
@@ -109,6 +121,10 @@ public class MenuExcluirClienteController {
         }else{
             clienteInexistente.setVisible(true);
         }
+
+        buttonEscolha.setVisible(false);
+        excluirNao.setVisible(false);
+        excluirSim.setVisible(true);
     }
 
     @FXML
@@ -126,8 +142,21 @@ public class MenuExcluirClienteController {
     }
 
     @FXML
-    void negarExcluir(ActionEvent event) {
+    void negarExcluir(ActionEvent event) throws IOException {
+        buttonEscolha.setVisible(false);
+        excluirNao.setVisible(true);
+        excluirSim.setVisible(false);
+    }
 
+    @FXML
+    void voltarMenuClientes(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuClientes.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
     }
 
 }

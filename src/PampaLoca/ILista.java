@@ -10,7 +10,9 @@ public interface ILista {
 
     int tamanho();
 
-    boolean remove(Object o);
+    boolean remove(Object o, int elem);
+
+    boolean remove(Object o, String txt);
 
     Noh busca(int elem);
 

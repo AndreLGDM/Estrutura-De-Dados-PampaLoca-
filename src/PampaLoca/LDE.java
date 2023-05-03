@@ -87,12 +87,12 @@ public class LDE implements ILista {
                 if (veiculoBusca.getPlacaVeiculo().equals(txt)) {
                     return noh;
                 }
-            }else if (objeto instanceof Cliente) {
+            } else if (objeto instanceof Cliente) {
                 Cliente clienteBusca = (Cliente) objeto;
                 if (clienteBusca.getCPF().equals(txt)) {
                     return noh;
                 }
-            }else if (objeto instanceof Locacao) {
+            } else if (objeto instanceof Locacao) {
                 Locacao LocacaoBusca = (Locacao) objeto;
                 if (LocacaoBusca.getVeiculo().getPlacaVeiculo().equals(txt)) {
                     return noh;
@@ -104,29 +104,11 @@ public class LDE implements ILista {
     }
 
     @Override
-    public boolean remove(Object objeto) {
+    public boolean remove(Object objeto, int elem) {
         Noh nohRemovido = null;
-        if (objeto instanceof Categoria) {
-            System.out.print("Digite a id da categoria a ser removida: ");
-            int idCategoria = in.nextInt();
-            System.out.println();
-            nohRemovido = busca(idCategoria);
-        } else if (objeto instanceof Veiculo) {
-            System.out.print("Digite a placa do veículo a ser removido: ");
-            String placaVeiculo = in.next();
-            System.out.println();
-            nohRemovido = busca(placaVeiculo);
-        } else if (objeto instanceof Locacao) {
-            System.out.print("Digite a placa do veículo atrelado a Locação: ");
-            String placaVeiculo = in.next();
-            System.out.println();
-            nohRemovido = busca(placaVeiculo);
-        } else if (objeto instanceof Cliente) {
-            System.out.print("Digite o cpf do cliente a ser removido: ");
-            String cpfCliente = in.next();
-            System.out.println();
-            nohRemovido = busca(cpfCliente);
-        }if (nohRemovido == null) {
+        if (objeto instanceof Categoria)
+            nohRemovido = busca(elem);
+        if (nohRemovido == null) {
             return false;
         }
         if (estahVazia()) {
@@ -149,6 +131,37 @@ public class LDE implements ILista {
         tamanho--;
         return true;
     }
+
+    @Override
+    public boolean remove(Object objeto, String txt){
+        Noh nohRemovido = null;
+    if (objeto instanceof Veiculo) {
+        nohRemovido = busca(txt);
+    } else if (objeto instanceof Locacao) {
+        nohRemovido = busca(txt);
+    } else if (objeto instanceof Cliente) {
+        nohRemovido = busca(txt);
+    }
+    if (estahVazia()) {
+        return false;
+    }
+    if (nohRemovido == inicio) { // info está no início
+        inicio = nohRemovido.getProximo();
+        if (inicio != null) {
+            inicio.setAnterior(null);
+        } else {
+            fim = null;
+        }
+    } else if (nohRemovido == fim) { // info está no fim
+        fim = nohRemovido.getAnterior();
+        fim.setProximo(null);
+    } else { // info está no meio
+        nohRemovido.getAnterior().setProximo(nohRemovido.getProximo());
+        nohRemovido.getProximo().setAnterior(nohRemovido.getAnterior());
+    }
+    tamanho--;
+    return true;
+}
 
     @Override
     public int tamanho() {

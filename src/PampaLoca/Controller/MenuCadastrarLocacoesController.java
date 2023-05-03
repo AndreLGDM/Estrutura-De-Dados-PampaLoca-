@@ -2,13 +2,7 @@ package PampaLoca.Controller;
 
 import java.io.IOException;
 
-import PampaLoca.Arquivo;
-import PampaLoca.Cliente;
-import PampaLoca.ILista;
-import PampaLoca.LDE;
-import PampaLoca.Locacao;
-import PampaLoca.Noh;
-import PampaLoca.Veiculo;
+import PampaLoca.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -89,9 +83,9 @@ public class MenuCadastrarLocacoesController {
         clienteObjeto = (Cliente) Cliente.getObjeto();
  
         
-        Locacao locacaoCriada = new Locacao(clienteObjeto, veiculoObjeto);
-        Arquivo.gravarArquivoCSV(locacaoCriada);
-        Locacoes.insereFim(locacaoCriada);
+        Locacao locacaoGerada = new Locacao(clienteObjeto, veiculoObjeto);
+        Arquivo.gravarArquivoCSV(locacaoGerada);
+        Locacoes.insereFim(locacaoGerada);
         }
 
 

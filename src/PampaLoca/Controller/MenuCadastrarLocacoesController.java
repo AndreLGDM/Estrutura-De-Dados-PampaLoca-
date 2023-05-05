@@ -61,7 +61,7 @@ public class MenuCadastrarLocacoesController {
         else
         cpfInvalido.setVisible(false);
 
-        if (placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || placa.matches("[A-Z]{3}-\\d{4}")) 
+        if (!placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || !placa.matches("[A-Z]{3}-\\d{4}")) 
         placaInvalido.setVisible(true);
         else 
         placaInvalido.setVisible(false);

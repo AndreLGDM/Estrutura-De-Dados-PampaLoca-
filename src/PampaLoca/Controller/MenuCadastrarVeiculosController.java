@@ -74,54 +74,56 @@ public class MenuCadastrarVeiculosController {
 
     @FXML
     void GerarVeiculo(ActionEvent event) throws IOException {
-        String Placa = txtPlaca.getText();
-        String Modelo = txtModelo.getText();
-        String Marca = txtMarca.getText();
-        String Ano = txtAno.getText();
-        String Potencia = txtPotencia.getText();
-        String Lugares = txtLugares.getText();
-        String Categoria = txtCategoria.getText();
+        String placa = txtPlaca.getText();
+        String modelo = txtModelo.getText();
+        String marca = txtMarca.getText();
+        String ano = txtAno.getText();
+        String potencia = txtPotencia.getText();
+        String lugares = txtLugares.getText();
+        String categoria = txtCategoria.getText();
 
-        if (!Placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || !Placa.matches("[A-Z]{3}-\\d{4}"))
-            placaInvalida.setVisible(true);
-        else
+        if (placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}")) {
             placaInvalida.setVisible(false);
-
-        if (!Categoria.matches("[0-9]+"))
+        } else if (placa.matches("[A-Z]{3}-\\d{4}")) {
+            placaInvalida.setVisible(false);
+        } else {
+            placaInvalida.setVisible(true);
+        }
+        if (!categoria.matches("[0-9]+"))
             categoriaInvalida.setVisible(true);
         else
             categoriaInvalida.setVisible(false);
 
-        if (!Ano.matches("[0-9]+"))
+        if (!ano.matches("[0-9]+"))
             anoInvalido.setVisible(true);
         else
             anoInvalido.setVisible(false);
 
-        if (!Potencia.matches("[0-9]+"))
+        if (!potencia.matches("[0-9]+"))
             potenciaInvalida.setVisible(true);
         else
             potenciaInvalida.setVisible(false);
 
-        if (!Lugares.matches("[0-9]+"))
+        if (!lugares.matches("[0-9]+"))
             quantidadeInvalida.setVisible(true);
         else
             quantidadeInvalida.setVisible(false);
 
-        if ((Placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || !Placa.matches("[A-Z]{3}-\\d{4}"))
-                && Categoria.matches("[0-9]+") && Ano.matches("[0-9]+") && Potencia.matches("[0-9]+")
-                && Lugares.matches("[0-9]+")) {
+        if ((placa.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || placa.matches("[A-Z]{3}-\\d{4}"))
+                && categoria.matches("[0-9]+") && ano.matches("[0-9]+") && potencia.matches("[0-9]+")
+                && lugares.matches("[0-9]+")) {
 
             ILista listaVeiculos = new LDE();
             ILista listaCategorias = new LDE();
             ILista listaClientes = new LDE();
             ILista listaLocacoes = new LDE();
             Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
-            Noh categoria;
-            categoria = listaCategorias.busca(Integer.parseInt(Categoria));
-            if (categoria != null) {
-                Categoria categoriaObjeto = (Categoria) categoria.getObjeto();
-                Veiculo veiculoGerado = new Veiculo(Placa, Modelo, Marca, Integer.parseInt(Ano),
-                        Integer.parseInt(Potencia), Integer.parseInt(Lugares), categoriaObjeto);
+            Noh categoriaNoh;
+            categoriaNoh = listaCategorias.busca(Integer.parseInt(categoria));
+            if (categoriaNoh != null) {
+                Categoria categoriaObjeto = (Categoria) categoriaNoh.getObjeto();
+                Veiculo veiculoGerado = new Veiculo(placa, modelo, marca, Integer.parseInt(ano),
+                        Integer.parseInt(potencia), Integer.parseInt(lugares), categoriaObjeto);
                 listaVeiculos.insereFim(veiculoGerado);
                 Arquivo.gravarArquivoCSV(veiculoGerado);
 

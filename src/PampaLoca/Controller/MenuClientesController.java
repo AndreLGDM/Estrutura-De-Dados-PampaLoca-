@@ -20,10 +20,24 @@ public class MenuClientesController {
     private Button buttonCriarCliente;
 
     @FXML
+    private Button buttonEditarCliente;
+
+    @FXML
     private Button voltar;
 
     @FXML
     private Button buttonExcluirCliente;
+
+    @FXML
+    void editarClientes(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuEditarClientes.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
     
     @FXML
     void apagarCliente(ActionEvent event) throws IOException{

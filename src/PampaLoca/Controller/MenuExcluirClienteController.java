@@ -113,19 +113,7 @@ public class MenuExcluirClienteController {
     @FXML
     void confirmarExcluir(ActionEvent event) throws IOException {
         String busca = txtBusca.getText();
-        ILista listaVeiculos = new LDE();
-        ILista listaCategorias = new LDE();
-        ILista listaClientes = new LDE();
-        ILista listaLocacoes = new LDE();
-        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
-        Noh Clientes;
-        Clientes = listaClientes.busca(busca);
-        if(Clientes != null){
         Arquivo.removerArquivoCSV("lib\\Clientes.csv", busca, 3);
-        }else{
-            clienteInexistente.setVisible(true);
-        }
-
         buttonEscolha.setVisible(false);
         excluirNao.setVisible(false);
         excluirSim.setVisible(true);
@@ -151,6 +139,7 @@ public class MenuExcluirClienteController {
             while (locacoes != null) {
                 if (locExistente.getCliente().getCNH().equals(clienteAchado.getCNH())) {
                     clienteLocado.setVisible(true);
+                    txtArea.setText(locExistente.toString());
                     clienteEncontrado = true;
                 } else {
                     String cliente = clienteAchado.toString();

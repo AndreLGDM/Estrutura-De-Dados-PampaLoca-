@@ -153,6 +153,44 @@ public class Arquivo {
         }
     }
 
+    public static void editarArquivoCSV(String nomeArquivo, String chave, int posicaoChave, String novoValor, int posicaoNovoValor) {
+        try {
+            File arquivoOriginal = new File(nomeArquivo);
+            File arquivoTemporario = new File("lib\\temp.csv");
+    
+            FileReader fr = new FileReader(arquivoOriginal);
+            BufferedReader br = new BufferedReader(fr);
+    
+            FileWriter fw = new FileWriter(arquivoTemporario);
+            BufferedWriter bw = new BufferedWriter(fw);
+    
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                String[] campos = linha.split(";");
+                if (campos[posicaoChave].equals(chave)) {
+                    campos[posicaoNovoValor] = novoValor;
+                    String novaLinha = String.join(";", campos);
+                    bw.write(novaLinha + "\n");
+                } else {
+                    bw.write(linha + "\n");
+                }
+            }
+    
+            br.close();
+            fr.close();
+            bw.close();
+            fw.close();
+    
+            arquivoOriginal.delete();
+            arquivoTemporario.renameTo(arquivoOriginal);
+    
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+
     public static void removerArquivoCSV(String nomeArquivo, String chave, int posicaoChave) {
         try {
             File arquivoOriginal = new File(nomeArquivo);

@@ -57,7 +57,7 @@
             <Text fx:id="digitePlaca" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a placa do veiculo da Locação:" />
             <TextField fx:id="txtBuscaPlaca" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite a Placa" />
             <Button fx:id="buttonBuscar" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar" />
-            <Text fx:id="Cliente" layoutX="168.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" />
+            <Text fx:id="Locacao" layoutX="168.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Locacao:" />
             <TextArea fx:id="txtArea" layoutX="168.0" layoutY="249.0" prefHeight="25.0" prefWidth="273.0" />
             <Button fx:id="buttonExcluir" layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
             <SplitMenuButton fx:id="buttonEscolha" layoutX="216.0" layoutY="210.0" mnemonicParsing="false" text="Realmente Deseja Excluir?">
@@ -76,7 +76,7 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Locação excluida com sucesso!" textFill="RED">
+            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Locação excluida com sucesso!" textFill="#075400">
                <font>
                   <Font size="15.0" />
                </font>
@@ -87,6 +87,11 @@
                </font>
             </Label>
             <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuLocacoes" text="Voltar" />
+            <Label fx:id="txtNaoEncontrada" layoutX="168.0" layoutY="286.0" text="Locação Não Encontrada!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children>
     </AnchorPane>
   </children>

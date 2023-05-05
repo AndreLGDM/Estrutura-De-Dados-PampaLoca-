@@ -57,6 +57,8 @@
             </Text>
             <Button fx:id="buttonCriarCategoria" layoutX="61.0" layoutY="230.0" mnemonicParsing="false" onAction="#irCadastroCategoria" text="Cadastrar Categoria" />
             <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuInicial" text="Voltar" />
+            <Button fx:id="buttonExcluirCategoria" layoutX="464.0" layoutY="230.0" mnemonicParsing="false" onAction="#apagarCategoria" text="Excluir Categoria" />
+            <Button fx:id="buttonEditarCategoria" layoutX="346.0" layoutY="230.0" mnemonicParsing="false" onAction="#irEditarCategoria" text="Editar Categoria" />
          </children>
     </AnchorPane>
   </children>

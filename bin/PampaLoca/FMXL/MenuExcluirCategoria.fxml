@@ -45,7 +45,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PampaLoca.Controller.MenuExcluirClienteController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PampaLoca.Controller.MenuExcluirCategoriaController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
@@ -54,29 +54,24 @@
                   <Image url="@../Images/PampaLocaIcon.png" />
                </image>
             </ImageView>
-            <Text fx:id="digiteCPF" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o CPF do cliente que deseja Excluir:" />
-            <TextField fx:id="txtBusca" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite o CPF" />
-            <Button fx:id="buttonBuscar" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar" />
-            <Text fx:id="Cliente" layoutX="168.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente:" />
+            <Text fx:id="digiteID" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o iD da locação:" />
+            <TextField fx:id="txtBusca" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite o ID" />
+            <Button fx:id="buttonBuscar" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#buscarCategoria" text="Buscar" />
+            <Text fx:id="Categoria" layoutX="168.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria:" />
             <TextArea fx:id="txtArea" layoutX="168.0" layoutY="249.0" prefHeight="25.0" prefWidth="273.0" />
-            <Button fx:id="buttonExcluir" layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
+            <Button fx:id="buttonExcluir" layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#excluirCategoria" text="Excluir" />
             <SplitMenuButton fx:id="buttonEscolha" layoutX="216.0" layoutY="210.0" mnemonicParsing="false" text="Realmente Deseja Excluir?">
               <items>
                 <MenuItem fx:id="buttonSim" mnemonicParsing="false" onAction="#confirmarExcluir" text="Sim" />
                 <MenuItem fx:id="buttonNão" mnemonicParsing="false" onAction="#negarExcluir" text="Não" />
               </items>
             </SplitMenuButton>
-            <Label fx:id="cpfInvalido" layoutX="168.0" layoutY="199.0" text="CPF invalido!" textFill="RED">
+            <Label fx:id="categoriaInexistente" layoutX="168.0" layoutY="199.0" text="Categoria inexistente!" textFill="RED">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="clienteInexistente" layoutX="168.0" layoutY="199.0" text="Cliente inexistente!" textFill="RED">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </Label>
-            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Cliente excluido com sucesso!" textFill="#075400">
+            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Categoria excluida com sucesso!" textFill="#075400">
                <font>
                   <Font size="15.0" />
                </font>
@@ -86,8 +81,13 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuClientes" text="Voltar" />
-            <Label fx:id="clienteLocado" layoutX="168.0" layoutY="286.0" text="Cliente Alocado!" textFill="RED">
+            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuLocacoes" text="Voltar" />
+            <Label fx:id="IdInvalido" layoutX="168.0" layoutY="199.0" text="ID Invalido!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="categoriaAssociada" layoutX="168.0" layoutY="282.0" text="Categoria associada a veículos!" textFill="RED">
                <font>
                   <Font size="10.0" />
                </font>

@@ -76,7 +76,7 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Cliente excluido com sucesso!" textFill="RED">
+            <Label fx:id="excluirSim" layoutX="207.0" layoutY="224.0" text="Cliente excluido com sucesso!" textFill="#075400">
                <font>
                   <Font size="15.0" />
                </font>

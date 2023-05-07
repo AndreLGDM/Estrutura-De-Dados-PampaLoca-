@@ -176,6 +176,7 @@ public class MenuExcluirLocacaoController {
         txtArea.setVisible(false);
         buttonExcluir.setVisible(false);
         Locacao.setVisible(false);
+        digitePlaca.setVisible(false);
         veiculoInexistente.setVisible(false);
         placaInvalida.setVisible(false);
         buttonEscolha.setVisible(true);

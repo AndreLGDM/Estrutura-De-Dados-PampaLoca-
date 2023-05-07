@@ -59,7 +59,7 @@ public class ListagemClientesController {
         txtAreaClientes.setText(lista);
     }
 
-    public void inicioFim(ActionEvent event) throws IOException{
+    public void listarInicio(ActionEvent event) {
     String lista = "";
     txtAreaClientes.setStyle("-fx-text-fill: BLACK");
     String linhaTracejada = "";
@@ -85,7 +85,7 @@ public class ListagemClientesController {
     txtAreaClientes.setText(lista);
     }
 
-    public void fimInicio(ActionEvent event) throws IOException{
+    public void listarFinal(ActionEvent event) {
         String lista = "";
             txtAreaClientes.setStyle("-fx-text-fill: BLACK");
             String linhaTracejada = "";

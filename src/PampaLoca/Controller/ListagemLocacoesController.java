@@ -25,6 +25,12 @@ public class ListagemLocacoesController {
     @FXML
     private Button buttonOK;
 
+    @FXML
+    private Button buttonInicio;
+
+    @FXML
+    private Button buttonFinal;
+
     String lista = "";
 
     @FXML
@@ -53,6 +59,61 @@ public class ListagemLocacoesController {
         }
         txtAreaLocacoes.setText(lista);
     }
+
+    @FXML
+    void listarInicio(ActionEvent event){
+        lista = "";
+        txtAreaLocacoes.setStyle("-fx-text-fill: BLACK");
+        String linhaTracejada = "";
+        for (int i = 0; i < 132; i++) {
+            linhaTracejada += "-";
+        }
+        ILista listaVeiculos = new LDE();
+        ILista listaCategorias = new LDE();
+        ILista listaClientes = new LDE();
+        ILista listaLocacoes = new LDE();
+        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+
+        if (listaLocacoes.estahVazia()) {
+            txtAreaLocacoes.setText("A lista está vazia.");
+            return;
+        }
+        LDE listaClientesAtt = (LDE) listaLocacoes;
+        Noh atual = listaClientesAtt.getInicio();
+        while (atual != null) {
+            lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
+            atual = atual.getProximo();
+        }
+        txtAreaLocacoes.setText(lista);
+    }
+
+    @FXML
+    void listarFinal(ActionEvent event){
+        lista = "";
+        txtAreaLocacoes.setStyle("-fx-text-fill: BLACK");
+        String linhaTracejada = "";
+        for (int i = 0; i < 132; i++) {
+            linhaTracejada += "-";
+        }
+        ILista listaVeiculos = new LDE();
+        ILista listaCategorias = new LDE();
+        ILista listaClientes = new LDE();
+        ILista listaLocacoes = new LDE();
+        Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
+
+        if (listaLocacoes.estahVazia()) {
+            txtAreaLocacoes.setText("A lista está vazia.");
+            return;
+        }
+        LDE listaClientesAtt = (LDE) listaLocacoes;
+        Noh atual = listaClientesAtt.getFim();
+        while (atual != null) {
+            lista += atual.getObjeto().toString() + "\n" + linhaTracejada +"\n";
+            atual = atual.getAnterior();
+        }
+        txtAreaLocacoes.setText(lista);
+    }
+
 
     @FXML
     void voltarMenuLocacoes(ActionEvent event) throws IOException {

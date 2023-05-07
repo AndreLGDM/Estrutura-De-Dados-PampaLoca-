@@ -141,7 +141,7 @@ public class MenuEditarCategoriaController {
         buttonSalvar.setVisible(true);
         txtIdNovo.setVisible(true);
         idNovo.setVisible(true);
-        buttonEditar.setVisible(false);
+        buttonEscolha.setVisible(false);
     }
 
     @FXML
@@ -149,7 +149,7 @@ public class MenuEditarCategoriaController {
         buttonSalvar2.setVisible(true);
         txtNomeNovo.setVisible(true);
         nomeNovo.setVisible(true);
-        buttonEditar.setVisible(false);
+        buttonEscolha.setVisible(false);
     }
 
     @FXML

@@ -29,7 +29,7 @@ public class ListagemVeiculosController {
     private Button buttonInicio;
 
     @FXML
-    private Button buttonFim;
+    private Button buttonFinal;
 
     String lista = "";
 
@@ -59,8 +59,8 @@ public class ListagemVeiculosController {
         txtAreaVeiculos.setText(lista);
     }
 
-    public void inicioFim(ActionEvent event) throws IOException{
-        String lista = "";
+    public void listarInicio(ActionEvent event) {
+        lista = "";
         txtAreaVeiculos.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {
@@ -85,8 +85,8 @@ public class ListagemVeiculosController {
         txtAreaVeiculos.setText(lista);
     }
 
-    public void fimInicio(ActionEvent event) throws IOException{
-        String lista = "";
+    public void listarFinal(ActionEvent event) {
+        lista = "";
         txtAreaVeiculos.setStyle("-fx-text-fill: BLACK");
         String linhaTracejada = "";
         for (int i = 0; i < 132; i++) {

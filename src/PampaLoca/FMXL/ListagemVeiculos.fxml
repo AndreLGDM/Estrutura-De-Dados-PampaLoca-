@@ -52,8 +52,8 @@
             <TextArea fx:id="txtAreaVeiculos" layoutX="37.0" layoutY="138.0" prefHeight="248.0" prefWidth="579.0" />
             <Text layoutX="37.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem Veiculos:" />
             <Button fx:id="buttonOK" layoutX="570.0" layoutY="106.0" mnemonicParsing="false" onAction="#voltarMenuVeiculo" text="OK" />
-            <Button fx:id="buttonInicio" layoutX="35.0" layoutY="40.0" mnemonicParsing="false" onAction="#inicioFim" text="Lista inicio ao fim" />
-            <Button fx:id="buttonFim" layoutX="35.0" layoutY="75.0" mnemonicParsing="false" onAction="#fimInicio" text="Lista fim ao inicio" />
+            <Button fx:id="buttonInicio" layoutX="35.0" layoutY="40.0" mnemonicParsing="false" onAction="#listarFinal" text="Listar do Inicio" />
+            <Button fx:id="buttonFinal" layoutX="35.0" layoutY="75.0" mnemonicParsing="false" onAction="#listarInicio" text="Listar do Final" />
          </children>
     </AnchorPane>
   </children>

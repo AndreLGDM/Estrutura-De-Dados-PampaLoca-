@@ -52,6 +52,8 @@
             <TextArea fx:id="txtAreaLocacoes" layoutX="37.0" layoutY="138.0" prefHeight="248.0" prefWidth="579.0" />
             <Text layoutX="37.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem Locações:" />
             <Button fx:id="buttonOK" layoutX="570.0" layoutY="106.0" mnemonicParsing="false" onAction="#voltarMenuLocacoes" text="OK" />
+            <Button fx:id="buttonFinal" layoutX="35.0" layoutY="75.0" mnemonicParsing="false" onAction="#listarFinal" prefHeight="25.0" prefWidth="94.0" text="Listar do Final" />
+            <Button fx:id="buttonInicio" layoutX="35.0" layoutY="40.0" mnemonicParsing="false" onAction="#listarInicio" text="Listar do Inicio" />
          </children>
     </AnchorPane>
   </children>

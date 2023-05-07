@@ -131,7 +131,7 @@ public class MenuCadastrarVeiculosController {
                 listaVeiculos.insereFim(veiculoGerado);
                 Arquivo.gravarArquivoCSV(veiculoGerado);
 
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuVeiculos.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuVeiculos.fxml"));
                 Parent root = fxmlLoader.load();
                 Scene tela = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -148,7 +148,7 @@ public class MenuCadastrarVeiculosController {
 
     @FXML
     void voltarMenuVeiculos(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuVeiculos.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuVeiculos.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -27,7 +27,7 @@ public class MenuPrincipalController {
 
     @FXML
     void irMenuCategorias(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuCategorias.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -38,7 +38,7 @@ public class MenuPrincipalController {
 
     @FXML
     void irMenuLocacoes(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuLocacoes.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuLocacoes.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -49,7 +49,7 @@ public class MenuPrincipalController {
 
     @FXML
     void irMenuVeiculos(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FMXL/MenuVeiculos.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FXML/MenuVeiculos.fxml"));
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(tela);
@@ -59,7 +59,7 @@ public class MenuPrincipalController {
 
     @FXML
     void irMenuClientes(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FMXL/MenuClientes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FXML/MenuClientes.fxml"));
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(tela);

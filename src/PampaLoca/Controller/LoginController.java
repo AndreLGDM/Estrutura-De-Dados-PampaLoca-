@@ -43,7 +43,7 @@ public class LoginController {
         String Senha = txtPassword.getText();
 
         if (Usuario.equals("PampaLoca") && Senha.equals("PampaLocaSenha")) {
-            Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FMXL/MenuPrincipal.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FXML/MenuPrincipal.fxml"));
             Scene tela = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(tela);

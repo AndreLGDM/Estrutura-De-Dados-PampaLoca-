@@ -171,7 +171,7 @@ public class MenuExcluirCategoriaController {
 
     @FXML
     void voltarMenuLocacoes(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuCategorias.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

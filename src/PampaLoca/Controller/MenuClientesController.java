@@ -30,7 +30,7 @@ public class MenuClientesController {
 
     @FXML
     void editarClientes(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuEditarClientes.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuEditarClientes.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -41,7 +41,7 @@ public class MenuClientesController {
     
     @FXML
     void apagarCliente(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuExcluirCliente.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuExcluirCliente.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -52,7 +52,7 @@ public class MenuClientesController {
 
     @FXML
     void irCadastroCliente(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCadastrarClientes.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuCadastrarClientes.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -63,7 +63,7 @@ public class MenuClientesController {
 
     @FXML
     void ListarClientes(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/ListagemClientes.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/ListagemClientes.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -74,7 +74,7 @@ public class MenuClientesController {
 
     @FXML
     void voltarMenuInicial(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuPrincipal.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuPrincipal.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

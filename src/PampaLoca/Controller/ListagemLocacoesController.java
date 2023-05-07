@@ -117,7 +117,7 @@ public class ListagemLocacoesController {
 
     @FXML
     void voltarMenuLocacoes(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FMXL/MenuLocacoes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FXML/MenuLocacoes.fxml"));
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(tela);

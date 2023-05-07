@@ -50,7 +50,7 @@ public class MenuCadastrarCategoriasController {
             Categoria categoriaGerada = new Categoria(Integer.parseInt(ID), Nome);
             Arquivo.gravarArquivoCSV(categoriaGerada);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuCategorias.fxml"));
             Parent root = fxmlLoader.load();
             Scene tela = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -62,7 +62,7 @@ public class MenuCadastrarCategoriasController {
 
     @FXML
     void voltarMenuCategorias(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/MenuCategorias.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

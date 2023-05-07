@@ -116,7 +116,7 @@ public class ListagemCategoriasController {
 
     @FXML
     void voltarMenuCategorias(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/PampaLoca/FXML/MenuCategorias.fxml"));
         Scene tela = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(tela);

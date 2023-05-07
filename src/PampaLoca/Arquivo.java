@@ -153,7 +153,7 @@ public class Arquivo {
         }
     }
 
-    public static void editarArquivoCSV(String nomeArquivo, String chave, int posicaoChave, String novoValor, int posicaoNovoValor) {
+    public static void editarArquivoCSV(String nomeArquivo, String identificador, int posicaoIdentificador, String antigo, int posicaoChave, String novo, int posicaoNovoValor) {
         try {
             File arquivoOriginal = new File(nomeArquivo);
             File arquivoTemporario = new File("lib\\temp.csv");
@@ -167,8 +167,8 @@ public class Arquivo {
             String linha;
             while ((linha = br.readLine()) != null) {
                 String[] campos = linha.split(";");
-                if (campos[posicaoChave].equals(chave)) {
-                    campos[posicaoNovoValor] = novoValor;
+                if (campos[posicaoIdentificador].equals(identificador) && campos[posicaoChave].equals(antigo)) {
+                    campos[posicaoNovoValor] = novo;
                     String novaLinha = String.join(";", campos);
                     bw.write(novaLinha + "\n");
                 } else {
@@ -188,6 +188,7 @@ public class Arquivo {
             e.printStackTrace();
         }
     }
+    
     
     
 

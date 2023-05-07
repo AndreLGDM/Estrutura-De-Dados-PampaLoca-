@@ -132,15 +132,17 @@ public class MenuExcluirClienteController {
         boolean clienteEncontrado = false;
         if (Clientes != null) {
             Cliente clienteAchado = (Cliente) Clientes.getObjeto();
+            System.out.println(clienteAchado.getCNH().toString());
             Noh locacoes;
             LDE listaATT = (LDE) listaLocacoes;
             locacoes = listaATT.getInicio();
-            Locacao locExistente = (Locacao) locacoes.getObjeto();
             while (locacoes != null) {
+                Locacao locExistente = (Locacao) locacoes.getObjeto();
                 if (locExistente.getCliente().getCNH().equals(clienteAchado.getCNH())) {
                     clienteLocado.setVisible(true);
                     txtArea.setText(locExistente.toString());
                     clienteEncontrado = true;
+                    break;
                 } else {
                     String cliente = clienteAchado.toString();
                     txtArea.setText(cliente);

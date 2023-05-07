@@ -73,8 +73,8 @@
             </Label>
             <MenuButton fx:id="buttonEscolha" layoutX="228.0" layoutY="210.0" mnemonicParsing="false" text="O que deseja editar?">
               <items>
-                <MenuItem fx:id="editarID" mnemonicParsing="false" onAction="#editarID" text="ID Categoria" />
-                <MenuItem fx:id="editarNome" mnemonicParsing="false" onAction="#editarNome" text="Nome Categoria" />
+                <MenuItem fx:id="editarID" mnemonicParsing="false" onAction="#editarID" text="ID da Categoria" />
+                <MenuItem fx:id="editarNome" mnemonicParsing="false" onAction="#editarNome" text="Nome da Categoria" />
               </items>
             </MenuButton>
             <Text fx:id="idNovo" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o novo ID:" />

@@ -62,7 +62,7 @@
             <TextField fx:id="txtModelo" layoutX="81.0" layoutY="214.0" promptText="Modelo Veículo" />
             <TextField fx:id="txtMarca" layoutX="81.0" layoutY="279.0" promptText="Marca Veículo" />
             <TextField fx:id="txtAno" layoutX="81.0" layoutY="338.0" promptText="Ano Veículo" />
-            <TextField fx:id="txtPotencia" layoutX="369.0" layoutY="147.0" promptText="Potẽncia Veiculo" />
+            <TextField fx:id="txtPotencia" layoutX="369.0" layoutY="147.0" promptText="Potência Veiculo" />
             <TextField fx:id="txtLugares" layoutX="369.0" layoutY="214.0" promptText="N° Lugares" />
             <TextField fx:id="txtCategoria" layoutX="369.0" layoutY="279.0" promptText="Categoria Veículo" />
             <Button fx:id="buttonCadastrar" layoutX="419.0" layoutY="338.0" mnemonicParsing="false" onAction="#GerarVeiculo" text="Cadastrar" />
@@ -92,6 +92,11 @@
                </font>
             </Label>
             <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuVeiculos" text="Voltar" />
+            <Label fx:id="categoriaInexistente" layoutX="373.0" layoutY="304.0" text="ID Inexistente!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children>
     </AnchorPane>
   </children>

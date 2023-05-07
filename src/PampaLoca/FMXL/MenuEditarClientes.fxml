@@ -73,10 +73,10 @@
             </Label>
             <MenuButton fx:id="buttonEscolha" layoutX="228.0" layoutY="210.0" mnemonicParsing="false" text="O que deseja editar?">
               <items>
-                <MenuItem fx:id="editarCPF" mnemonicParsing="false" onAction="#editarCPF" text="CPF Cliente" />
-                <MenuItem fx:id="editarNome" mnemonicParsing="false" onAction="#editarNome" text="Nome Cliente" />
-                  <MenuItem fx:id="editarCNH" mnemonicParsing="false" onAction="#editarCNH" text="CNH Cliente" />
-                  <MenuItem fx:id="editarTelefone" mnemonicParsing="false" onAction="#editarTelefone" text="Telefone Cliente" />
+                <MenuItem fx:id="editarCPF" mnemonicParsing="false" onAction="#editarCPF" text="CPF do Cliente" />
+                <MenuItem fx:id="editarNome" mnemonicParsing="false" onAction="#editarNome" text="Nome do Cliente" />
+                  <MenuItem fx:id="editarCNH" mnemonicParsing="false" onAction="#editarCNH" text="CNH do Cliente" />
+                  <MenuItem fx:id="editarTelefone" mnemonicParsing="false" onAction="#editarTelefone" text="Telefone do Cliente" />
               </items>
             </MenuButton>
             <Text fx:id="cpfNovo" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o novo CPF:" />

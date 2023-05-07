@@ -62,7 +62,7 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="placaInvalido" layoutX="80.0" layoutY="200.0" text="Placa Inválida!" textFill="RED">
+            <Label fx:id="placaInvalida" layoutX="80.0" layoutY="200.0" text="Placa Inválida!" textFill="RED">
                <font>
                   <Font size="10.0" />
                </font>
@@ -74,6 +74,26 @@
             <Text layoutX="80.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o valor da locação:" />
             <TextField fx:id="txtValor" layoutX="80.0" layoutY="362.0" prefHeight="25.0" prefWidth="181.0" promptText="R$" />
             <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuLocacoes" text="Voltar" />
+            <Label fx:id="clienteInexistente" layoutX="80.0" layoutY="135.0" text="Cliente Inexistente!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="veiculoInexistente" layoutX="80.0" layoutY="200.0" text="Veiculo Inexistente!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="veiculoLocado" layoutX="80.0" layoutY="200.0" text="Veiculo já pertence a uma Locação!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="clienteLocado" layoutX="80.0" layoutY="135.0" text="Cliente já está em outra Loação!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children>
     </AnchorPane>
   </children>

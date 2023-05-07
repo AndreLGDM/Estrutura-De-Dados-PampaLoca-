@@ -44,9 +44,9 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="buttonClientes" layoutX="61.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuClientes" text="Clientes" />
-            <Button fx:id="buttonVeiculos" layoutX="544.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuVeiculos" text="Veiculos" />
-            <Button fx:id="buttonCategorias" layoutX="376.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuCategorias" text="Categorias" />
+            <Button fx:id="buttonClientes" layoutX="90.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuClientes" text="Clientes" />
+            <Button fx:id="buttonVeiculos" layoutX="465.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuVeiculos" text="Veiculos" />
+            <Button fx:id="buttonCategorias" layoutX="338.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuCategorias" text="Categorias" />
             <Button fx:id="buttonLocacoes" layoutX="214.0" layoutY="230.0" mnemonicParsing="false" onAction="#irMenuLocacoes" text="Locações" />
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="203.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>

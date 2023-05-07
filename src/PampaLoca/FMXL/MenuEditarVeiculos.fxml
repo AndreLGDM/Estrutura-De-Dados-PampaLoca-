@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PampaLoca.Controller.MenuEditarVeiculosController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="203.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/PampaLocaIcon.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="digitePlaca" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a placa do veiculo:" />
+            <TextField fx:id="txtBusca" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="AAA-1B23 ou AAA-1234" />
+            <Button fx:id="buttonBuscar" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#buscarVeiculo" text="Buscar" />
+            <Text fx:id="veiculo" layoutX="168.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veiculo:" />
+            <TextArea fx:id="txtArea" layoutX="168.0" layoutY="249.0" prefHeight="25.0" prefWidth="273.0" />
+            <Button fx:id="buttonEditarVeiculo" layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#editarVeiculo" text="Editar" />
+            <Label fx:id="veiculoInexistente" layoutX="168.0" layoutY="199.0" text="Veiculo inexistente!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button fx:id="voltar" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#voltarMenuVeiculos" text="Voltar" />
+            <Label fx:id="placaInvalida" layoutX="168.0" layoutY="199.0" text="Placa Invalida!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="buttonEscolha" layoutX="228.0" layoutY="210.0" mnemonicParsing="false" text="O que deseja editar?">
+              <items>
+                <MenuItem fx:id="editarPlaca" mnemonicParsing="false" onAction="#editarPlaca" text="Placa do Veiculo" />
+                <MenuItem fx:id="editarModelo" mnemonicParsing="false" onAction="#editarModelo" text="Modelo do Veiculo" />
+                  <MenuItem fx:id="editarMarca" mnemonicParsing="false" onAction="#editarMarca" text="Marca do Veiculo" />
+                  <MenuItem fx:id="editarAno" mnemonicParsing="false" onAction="#editarAno" text="Ano do Veiculo" />
+                  <MenuItem fx:id="editarPotencia" mnemonicParsing="false" onAction="#editarPotencia" text="Potência Veiculo" />
+                  <MenuItem fx:id="editarLugares" mnemonicParsing="false" onAction="#editarLugares" text="Quantidade de Lugares do Veiculo" />
+                  <MenuItem fx:id="editarCategoria" mnemonicParsing="false" onAction="#editarCategoria" text="Categoria do Veiculo" />
+              </items>
+            </MenuButton>
+            <Text fx:id="placaNova" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a nova Placa:" />
+            <TextField fx:id="txtPlacaNova" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="AAA-1B23 ou AAA-1234" />
+            <Button fx:id="buttonSalvar" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV" text="Salvar" />
+            <Button fx:id="buttonSalvar2" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV2" text="Salvar" />
+            <Text fx:id="modeloNovo" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o novo Modelo:" />
+            <TextField fx:id="txtModeloNovo" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite novo Modelo" />
+            <Label fx:id="placaModificada" layoutX="207.0" layoutY="224.0" text="Placa modificada com Sucesso!" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="modeloModificado" layoutX="207.0" layoutY="224.0" text="Modelo modificado com Sucesso" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="marcaModificada" layoutX="207.0" layoutY="224.0" text="Marca modificada com Sucesso" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="anoModificado" layoutX="207.0" layoutY="224.0" text="Ano modificado com Sucesso" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonSalvar3" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV3" text="Salvar" />
+            <Button fx:id="buttonSalvar4" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV4" text="Salvar" />
+            <Text fx:id="marcaNova" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a nova Marca:" />
+            <Text fx:id="anoNovo" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite o novo Ano:" />
+            <TextField fx:id="txtMarcaNova" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite nova Marca" />
+            <TextField fx:id="txtAnoNovo" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite novo Ano" />
+            <Label fx:id="anoInvalido" layoutX="168.0" layoutY="199.0" text="Ano Invalido!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="potenciaInvalida" layoutX="168.0" layoutY="199.0" text="Potência Invalida!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="lugaresModificado" layoutX="160.0" layoutY="224.0" text="Quantidade de lugares modificada com Sucesso" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="categoriaModificada" layoutX="207.0" layoutY="224.0" text="Categoria modificada com Sucesso" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPotenciaNova" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite nova Potência" />
+            <TextField fx:id="txtLugaresNovo" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite nova quantidade de Lugares" />
+            <TextField fx:id="txtCategoriaNova" layoutX="168.0" layoutY="175.0" prefHeight="25.0" prefWidth="273.0" promptText="Digite nova Categoria" />
+            <Button fx:id="buttonSalvar5" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV5" text="Salvar" />
+            <Button fx:id="buttonSalvar6" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV6" text="Salvar" />
+            <Button fx:id="buttonSalvar7" layoutX="389.0" layoutY="210.0" mnemonicParsing="false" onAction="#editaCSV7" text="Salvar" />
+            <Label fx:id="lugaresInvalido" layoutX="168.0" layoutY="199.0" text="Quantidade de lugares Invalida!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="categoriaInvalida" layoutX="168.0" layoutY="199.0" text="Categoria Invalida!!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="potenciaModificada" layoutX="207.0" layoutY="224.0" text="Potência modificada com Sucesso" textFill="#075400">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="categoriaInexistente" layoutX="168.0" layoutY="199.0" text="Categoria inexistente!" textFill="RED">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Text fx:id="potenciaNova" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a nova Potência:" />
+            <Text fx:id="lugaresNovo" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a nova quantidade de Lugares:" />
+            <Text fx:id="categoriaNova" layoutX="168.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digite a nova Categoria:" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

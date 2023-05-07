@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception { //PampaLocaSenha
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/LoginFuncionario.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FXML/LoginFuncionario.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         root.setStyle("-fx-background-color: LIGHTBLUE");

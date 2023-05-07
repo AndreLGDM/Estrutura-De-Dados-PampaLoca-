@@ -120,9 +120,8 @@ public class Arquivo {
     }
 
     public static void gravarArquivoCSV(Locacao l) {
-        try {
-            FileOutputStream fos = new FileOutputStream("lib\\Locações.csv", true);
-            OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+        try (FileOutputStream fos = new FileOutputStream("lib\\Locações.csv", true);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8)){
     
             String modelo = l.getVeiculo().getModeloVeiculo().toString();
             String nome = l.getCliente().getNome().toString();

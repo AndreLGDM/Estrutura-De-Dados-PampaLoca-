@@ -3,7 +3,6 @@ package PampaLoca.Controller;
 import java.io.IOException;
 
 import PampaLoca.*;
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -184,30 +183,10 @@ public class MenuEditarClienteController {
             cpfInvalido.setVisible(true);
         } else {
             cpfInvalido.setVisible(false);
-            Arquivo.editarArquivoCSV("lib\\Clientes.csv", cpfAntigo, 3, cpf, 3);
-            txtBusca.setText(cpf);
-            clienteInexistente.setVisible(false);
-            cnhInvalida.setVisible(false);
-            telefoneInvalido.setVisible(false);
-            digiteCPF.setVisible(false);
-            cliente.setVisible(false);
-            buttonEditarCliente.setVisible(false);
-            buttonBuscar.setVisible(false);
-            buttonSalvar.setVisible(false);
-            buttonSalvar2.setVisible(false);
-            buttonSalvar3.setVisible(false);
-            buttonSalvar4.setVisible(false);
-            nomeNovo.setVisible(false);
-            cnhNova.setVisible(false);
+            Arquivo.editarArquivoCSV("lib\\Clientes.csv",cpfAntigo,3, cpfAntigo, 3, cpf, 3);
             cpfNovo.setVisible(false);
-            TelefoneNovo.setVisible(false);
-            txtBusca.setVisible(false);
-            txtArea.setVisible(false);
-            txtNomeNovo.setVisible(false);
             txtCpfNovo.setVisible(false);
-            txtCnhNova.setVisible(false);
-            txtTelefoneNovo.setVisible(false);
-            nomeModificado.setVisible(false);
+            buttonSalvar.setVisible(false);
             cpfModificado.setVisible(true);
             Task<Void> pausaTask = new Task<Void>() {
                 @Override
@@ -218,8 +197,6 @@ public class MenuEditarClienteController {
             };
             pausaTask.setOnSucceeded(e -> {
                 cpfModificado.setVisible(false);
-                cnhModificada.setVisible(false);
-                telefoneModificado.setVisible(false);
                 buttonEscolha.setVisible(true);
             });
             new Thread(pausaTask).start();
@@ -239,33 +216,13 @@ public class MenuEditarClienteController {
             Cliente Objeto = (Cliente) clienteNoh.getObjeto();
             String nomeAntigo = Objeto.getNome().toString();
             String nome = txtNomeNovo.getText();
-            Arquivo.editarArquivoCSV("lib\\Clientes.csv", nomeAntigo, 0, nome, 0);
-            Arquivo.editarArquivoCSV("lib\\Locações.csv", nomeAntigo, 1, nome, 1);
+            Arquivo.editarArquivoCSV("lib\\Clientes.csv",busca,3, nomeAntigo, 0, nome, 0);
+            Arquivo.editarArquivoCSV("lib\\Locações.csv",nomeAntigo,1, nomeAntigo, 1, nome, 1);
         }
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        cnhInvalida.setVisible(false);
-        telefoneInvalido.setVisible(false);
-        digiteCPF.setVisible(false);
-        cliente.setVisible(false);
-        buttonEditarCliente.setVisible(false);
-        buttonBuscar.setVisible(false);
-        buttonSalvar.setVisible(false);
-        buttonSalvar2.setVisible(false);
-        buttonSalvar3.setVisible(false);
-        buttonSalvar4.setVisible(false);
         nomeNovo.setVisible(false);
-        cnhNova.setVisible(false);
-        cpfNovo.setVisible(false);
-        TelefoneNovo.setVisible(false);
-        txtBusca.setVisible(false);
-        txtArea.setVisible(false);
         txtNomeNovo.setVisible(false);
-        txtCpfNovo.setVisible(false);
-        txtCnhNova.setVisible(false);
-        txtTelefoneNovo.setVisible(false);
+        buttonSalvar2.setVisible(false);
         nomeModificado.setVisible(true);
-        cpfModificado.setVisible(false);
         Task<Void> pausaTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
@@ -275,8 +232,6 @@ public class MenuEditarClienteController {
         };
         pausaTask.setOnSucceeded(e -> {
             nomeModificado.setVisible(false);
-            cnhModificada.setVisible(false);
-            telefoneModificado.setVisible(false);
             buttonEscolha.setVisible(true);
         });
         new Thread(pausaTask).start();
@@ -299,33 +254,12 @@ public class MenuEditarClienteController {
             if (clienteNoh != null) {
                 Cliente Objeto = (Cliente) clienteNoh.getObjeto();
                 String cnhAntiga = Objeto.getCNH().toString();
-                Arquivo.editarArquivoCSV("lib\\Clientes.csv", cnhAntiga, 1, cnh, 1);
-                Arquivo.editarArquivoCSV("lib\\Locações.csv", cnhAntiga, 2, cnh, 2);
+                Arquivo.editarArquivoCSV("lib\\Clientes.csv",busca,3, cnhAntiga, 1, cnh, 1);
+                Arquivo.editarArquivoCSV("lib\\Locações.csv",cnhAntiga,2, cnhAntiga, 2, cnh, 2);
             }
-            clienteInexistente.setVisible(false);
-            cpfInvalido.setVisible(false);
-            cnhInvalida.setVisible(false);
-            telefoneInvalido.setVisible(false);
-            digiteCPF.setVisible(false);
-            cliente.setVisible(false);
-            buttonEditarCliente.setVisible(false);
-            buttonBuscar.setVisible(false);
-            buttonSalvar.setVisible(false);
-            buttonSalvar2.setVisible(false);
-            buttonSalvar3.setVisible(false);
-            buttonSalvar4.setVisible(false);
-            nomeNovo.setVisible(false);
             cnhNova.setVisible(false);
-            cpfNovo.setVisible(false);
-            TelefoneNovo.setVisible(false);
-            txtBusca.setVisible(false);
-            txtArea.setVisible(false);
-            txtNomeNovo.setVisible(false);
-            txtCpfNovo.setVisible(false);
             txtCnhNova.setVisible(false);
-            txtTelefoneNovo.setVisible(false);
-            nomeModificado.setVisible(false);
-            cpfModificado.setVisible(false);
+            buttonSalvar3.setVisible(false);
             cnhModificada.setVisible(true);
             Task<Void> pausaTask = new Task<Void>() {
                 @Override
@@ -336,7 +270,6 @@ public class MenuEditarClienteController {
             };
             pausaTask.setOnSucceeded(e -> {
                 cnhModificada.setVisible(false);
-                telefoneModificado.setVisible(false);
                 buttonEscolha.setVisible(true);
             });
             new Thread(pausaTask).start();
@@ -360,32 +293,11 @@ public class MenuEditarClienteController {
             if (clienteNoh != null) {
                 Cliente Objeto = (Cliente) clienteNoh.getObjeto();
                 String telefoneAntigo = Objeto.getTelefone().toString();
-                Arquivo.editarArquivoCSV("lib\\Clientes.csv", telefoneAntigo, 2, telefone, 2);
+                Arquivo.editarArquivoCSV("lib\\Clientes.csv",busca,3, telefoneAntigo, 2, telefone, 2);
             }
-            clienteInexistente.setVisible(false);
-            cpfInvalido.setVisible(false);
-            cnhInvalida.setVisible(false);
-            telefoneInvalido.setVisible(false);
-            digiteCPF.setVisible(false);
-            cliente.setVisible(false);
-            buttonEditarCliente.setVisible(false);
-            buttonBuscar.setVisible(false);
-            buttonSalvar.setVisible(false);
-            buttonSalvar2.setVisible(false);
-            buttonSalvar3.setVisible(false);
-            buttonSalvar4.setVisible(false);
-            nomeNovo.setVisible(false);
-            cnhNova.setVisible(false);
-            cpfNovo.setVisible(false);
             TelefoneNovo.setVisible(false);
-            txtBusca.setVisible(false);
-            txtArea.setVisible(false);
-            txtNomeNovo.setVisible(false);
-            txtCpfNovo.setVisible(false);
-            txtCnhNova.setVisible(false);
             txtTelefoneNovo.setVisible(false);
-            nomeModificado.setVisible(false);
-            cpfModificado.setVisible(false);
+            buttonSalvar4.setVisible(false);
             telefoneModificado.setVisible(true);
             Task<Void> pausaTask = new Task<Void>() {
                 @Override
@@ -395,7 +307,6 @@ public class MenuEditarClienteController {
                 }
             };
             pausaTask.setOnSucceeded(e -> {
-                cnhModificada.setVisible(false);
                 telefoneModificado.setVisible(false);
                 buttonEscolha.setVisible(true);
             });
@@ -405,157 +316,45 @@ public class MenuEditarClienteController {
 
     @FXML
     void editarCNH(ActionEvent event) {
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        cnhInvalida.setVisible(false);
-        telefoneInvalido.setVisible(false);
-        digiteCPF.setVisible(false);
-        cliente.setVisible(false);
-        buttonEditarCliente.setVisible(false);
-        buttonEscolha.setVisible(false);
-        buttonBuscar.setVisible(false);
-        buttonSalvar.setVisible(false);
-        buttonSalvar2.setVisible(false);
         buttonSalvar3.setVisible(true);
-        buttonSalvar4.setVisible(false);
-        nomeNovo.setVisible(false);
         cnhNova.setVisible(true);
-        cpfNovo.setVisible(false);
-        TelefoneNovo.setVisible(false);
-        txtBusca.setVisible(false);
-        txtArea.setVisible(false);
-        txtNomeNovo.setVisible(false);
-        txtCpfNovo.setVisible(false);
         txtCnhNova.setVisible(true);
-        txtTelefoneNovo.setVisible(false);
-        nomeModificado.setVisible(false);
-        cpfModificado.setVisible(false);
-        cnhModificada.setVisible(false);
-        telefoneModificado.setVisible(false);
+        buttonEscolha.setVisible(false);
     }
 
     @FXML
     void editarCPF(ActionEvent event) {
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        cnhInvalida.setVisible(false);
-        telefoneInvalido.setVisible(false);
-        digiteCPF.setVisible(false);
-        cliente.setVisible(false);
-        buttonEditarCliente.setVisible(false);
-        buttonEscolha.setVisible(false);
-        buttonBuscar.setVisible(false);
         buttonSalvar.setVisible(true);
-        buttonSalvar2.setVisible(false);
-        buttonSalvar3.setVisible(false);
-        buttonSalvar4.setVisible(false);
-        nomeNovo.setVisible(false);
-        cnhNova.setVisible(false);
         cpfNovo.setVisible(true);
-        TelefoneNovo.setVisible(false);
-        txtBusca.setVisible(false);
-        txtArea.setVisible(false);
-        txtNomeNovo.setVisible(false);
         txtCpfNovo.setVisible(true);
-        txtCnhNova.setVisible(false);
-        txtTelefoneNovo.setVisible(false);
-        nomeModificado.setVisible(false);
-        cpfModificado.setVisible(false);
-        cnhModificada.setVisible(false);
-        telefoneModificado.setVisible(false);
+        buttonEscolha.setVisible(false);
     }
 
     @FXML
     void editarCliente(ActionEvent event) {
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        cnhInvalida.setVisible(false);
-        telefoneInvalido.setVisible(false);
-        digiteCPF.setVisible(false);
         cliente.setVisible(false);
-        buttonEditarCliente.setVisible(false);
-        buttonEscolha.setVisible(true);
+        digiteCPF.setVisible(false);
         buttonBuscar.setVisible(false);
-        buttonSalvar.setVisible(false);
-        buttonSalvar2.setVisible(false);
-        buttonSalvar3.setVisible(false);
-        buttonSalvar4.setVisible(false);
-        nomeNovo.setVisible(false);
-        cnhNova.setVisible(false);
-        cpfNovo.setVisible(false);
-        TelefoneNovo.setVisible(false);
+        buttonEditarCliente.setVisible(false);
         txtBusca.setVisible(false);
         txtArea.setVisible(false);
-        txtNomeNovo.setVisible(false);
-        txtCpfNovo.setVisible(false);
-        txtCnhNova.setVisible(false);
-        txtTelefoneNovo.setVisible(false);
-        nomeModificado.setVisible(false);
-        cpfModificado.setVisible(false);
-        cnhModificada.setVisible(false);
-        telefoneModificado.setVisible(false);
+        buttonEscolha.setVisible(true);
     }
 
     @FXML
     void editarNome(ActionEvent event) {
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        cnhInvalida.setVisible(false);
-        telefoneInvalido.setVisible(false);
-        digiteCPF.setVisible(false);
-        cliente.setVisible(false);
-        buttonEditarCliente.setVisible(false);
-        buttonEscolha.setVisible(false);
-        buttonBuscar.setVisible(false);
-        buttonSalvar.setVisible(false);
-        buttonSalvar2.setVisible(true);
-        buttonSalvar3.setVisible(false);
-        buttonSalvar4.setVisible(false);
         nomeNovo.setVisible(true);
-        cnhNova.setVisible(false);
-        cpfNovo.setVisible(false);
-        TelefoneNovo.setVisible(false);
-        txtBusca.setVisible(false);
-        txtArea.setVisible(false);
         txtNomeNovo.setVisible(true);
-        txtCpfNovo.setVisible(false);
-        txtCnhNova.setVisible(false);
-        txtTelefoneNovo.setVisible(false);
-        nomeModificado.setVisible(false);
-        cpfModificado.setVisible(false);
-        cnhModificada.setVisible(false);
-        telefoneModificado.setVisible(false);
+        buttonSalvar2.setVisible(true);
+        buttonEscolha.setVisible(false);
     }
 
     @FXML
     void editarTelefone(ActionEvent event) {
-        clienteInexistente.setVisible(false);
-        cpfInvalido.setVisible(false);
-        cnhInvalida.setVisible(false);
-        telefoneInvalido.setVisible(false);
-        digiteCPF.setVisible(false);
-        cliente.setVisible(false);
-        buttonEditarCliente.setVisible(false);
-        buttonEscolha.setVisible(false);
-        buttonBuscar.setVisible(false);
-        buttonSalvar.setVisible(false);
-        buttonSalvar2.setVisible(false);
-        buttonSalvar3.setVisible(false);
         buttonSalvar4.setVisible(true);
-        nomeNovo.setVisible(false);
-        cnhNova.setVisible(false);
-        cpfNovo.setVisible(false);
         TelefoneNovo.setVisible(true);
-        txtBusca.setVisible(false);
-        txtArea.setVisible(false);
-        txtNomeNovo.setVisible(false);
-        txtCpfNovo.setVisible(false);
-        txtCnhNova.setVisible(false);
         txtTelefoneNovo.setVisible(true);
-        nomeModificado.setVisible(false);
-        cpfModificado.setVisible(false);
-        cnhModificada.setVisible(false);
-        telefoneModificado.setVisible(false);
+        buttonEscolha.setVisible(false);
     }
 
     @FXML

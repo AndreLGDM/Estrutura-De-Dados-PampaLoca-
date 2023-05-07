@@ -28,6 +28,9 @@ public class MenuCadastrarVeiculosController {
     private Label categoriaInvalida;
 
     @FXML
+    private Label categoriaInexistente;
+
+    @FXML
     private Label anoInvalido;
 
     @FXML
@@ -70,6 +73,7 @@ public class MenuCadastrarVeiculosController {
         placaInvalida.setVisible(false);
         potenciaInvalida.setVisible(false);
         quantidadeInvalida.setVisible(false);
+        categoriaInexistente.setVisible(false);
     }
 
     @FXML
@@ -135,7 +139,8 @@ public class MenuCadastrarVeiculosController {
                 root.setStyle("-fx-background-color: LIGHTBLUE");
                 stage.show();
             } else {
-                categoriaInvalida.setVisible(true);
+                categoriaInexistente.setVisible(true);
+                categoriaInvalida.setVisible(false);
             }
         }
 

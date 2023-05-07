@@ -95,7 +95,7 @@ public class MenuExcluirVeiculoController {
             placaInvalida.setVisible(true);
         }
 
-        if (busca.matches("[A-Z]{3}-\\d[A-Z]\\d{2}")) {
+        if (busca.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || busca.matches("[A-Z]{3}-\\d{4}")) {
             placaInvalida.setVisible(false);
             buttonExcluir.setVisible(true);
             ILista listaVeiculos = new LDE();
@@ -111,23 +111,7 @@ public class MenuExcluirVeiculoController {
             } else {
                 veiculoInexistente.setVisible(true);
             }
-        } else if (busca.matches("[A-Z]{3}-\\d{4}")) {
-            placaInvalida.setVisible(false);
-            buttonExcluir.setVisible(true);
-            ILista listaVeiculos = new LDE();
-            ILista listaCategorias = new LDE();
-            ILista listaClientes = new LDE();
-            ILista listaLocacoes = new LDE();
-            Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
-            Noh veiculoNoh;
-            veiculoNoh = listaVeiculos.busca(busca);
-            if (veiculoNoh != null) {
-                Veiculo Objeto = (Veiculo) veiculoNoh.getObjeto();
-                txtArea.setText(Objeto.toString());
-            } else {
-                veiculoInexistente.setVisible(true);
-            }
-        }
+        } 
     }
 
     @FXML
@@ -155,7 +139,7 @@ public class MenuExcluirVeiculoController {
             placaInvalida.setVisible(true);
         }
 
-        if (busca.matches("[A-Z]{3}-\\d[A-Z]\\d{2}")) {
+        if (busca.matches("[A-Z]{3}-\\d[A-Z]\\d{2}") || busca.matches("[A-Z]{3}-\\d{4}")) {
             placaInvalida.setVisible(false);
             buttonExcluir.setVisible(true);
             ILista listaVeiculos = new LDE();
@@ -179,31 +163,6 @@ public class MenuExcluirVeiculoController {
                     }
                     locacaoNoh = locacaoNoh.getProximo();
                 }   
-            }
-        }else if(busca.matches("[A-Z]{3}-\\d{4}")) {
-            placaInvalida.setVisible(false);
-            buttonExcluir.setVisible(true);
-            ILista listaVeiculos = new LDE();
-            ILista listaCategorias = new LDE();
-            ILista listaClientes = new LDE();
-            ILista listaLocacoes = new LDE();
-            Arquivo.lerArquivoCSV(listaVeiculos, listaClientes, listaLocacoes, listaCategorias);
-            Noh veiculoNoh;
-            veiculoNoh = listaVeiculos.busca(busca);
-            if (veiculoNoh != null) {
-                Veiculo Objeto = (Veiculo) veiculoNoh.getObjeto();
-                LDE locacaoLDE = (LDE) listaLocacoes;
-                Noh locacaoNoh = locacaoLDE.getInicio();
-                while (locacaoNoh != null) {
-                    Locacao locacaoAtual = (Locacao) locacaoNoh.getObjeto();
-                    if (locacaoAtual.getVeiculo().getModeloVeiculo().equals(Objeto.getModeloVeiculo())) {
-                        txtArea.setText(locacaoAtual.toString());
-                        veiculoLocado.setVisible(true);
-                        veiculoEncontrado = true;
-                        break;
-                    }
-                    locacaoNoh = locacaoNoh.getProximo();
-                }
             }
         }
 

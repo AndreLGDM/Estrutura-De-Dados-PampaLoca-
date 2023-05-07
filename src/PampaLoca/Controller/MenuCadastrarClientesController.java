@@ -4,9 +4,6 @@ import java.io.IOException;
 
 import PampaLoca.Arquivo;
 import PampaLoca.Cliente;
-import PampaLoca.ClienteFactory;
-import PampaLoca.ILista;
-import PampaLoca.LDE;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -78,10 +75,9 @@ public class MenuCadastrarClientesController {
 
         if(CPF.matches("[0-9]+") && CNH.matches("[0-9]+") && Telefone.matches("[0-9]+")){
 
-        Cliente ClienteGerado = ClienteFactory.criarCliente(Nome, CPF, CNH, Telefone);
-        ILista listaCliente = new LDE();
+        Cliente ClienteGerado = new Cliente(Nome, CNH, Telefone, CPF);
         Arquivo.gravarArquivoCSV(ClienteGerado);
-        listaCliente.insereFim(ClienteGerado);
+    
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuClientes.fxml"));
         Parent root = fxmlLoader.load();

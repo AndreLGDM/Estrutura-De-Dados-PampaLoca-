@@ -16,13 +16,28 @@ public class MenuVeiculosController {
     @FXML
     private Button buttonListarVeiculos;
 
-    @FXML Button buttonCriarVeiculo;
+    @FXML 
+    private Button buttonCriarVeiculo;
+
+    @FXML
+    private Button buttonEditarVeiculos;
 
     @FXML
     private Button voltar;
 
     @FXML
     private Button buttonExcluirVeiculo;
+
+    @FXML
+    void editarVeiculos(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuEditarVeiculos.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        root.setStyle("-fx-background-color: LIGHTBLUE");
+        stage.show();
+    }
 
     @FXML
     void irCadastroVeiculo(ActionEvent event) throws IOException{

@@ -47,10 +47,8 @@ public class MenuCadastrarCategoriasController {
             IdInvalido.setVisible(false);
 
         if (ID.matches("[0-9]+")) {
-            Categoria categoriaGerada = CategoriaFactory.criarCategoria(Integer.parseInt(ID), Nome);
-            ILista listaCategorias = new LDE();
+            Categoria categoriaGerada = new Categoria(Integer.parseInt(ID), Nome);
             Arquivo.gravarArquivoCSV(categoriaGerada);
-            listaCategorias.insereFim(listaCategorias);
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/PampaLoca/FMXL/MenuCategorias.fxml"));
             Parent root = fxmlLoader.load();

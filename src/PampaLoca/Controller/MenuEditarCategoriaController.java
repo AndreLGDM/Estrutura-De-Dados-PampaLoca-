@@ -3,7 +3,6 @@ package PampaLoca.Controller;
 import java.io.IOException;
 
 import PampaLoca.*;
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -120,6 +119,7 @@ public class MenuEditarCategoriaController {
                 txtArea.setText(categoriaEncontrada.toString());
             } else {
                 categoriaInexistente.setVisible(true);
+                buttonEditar.setVisible(false);
                 IdInvalido.setVisible(false);
             }
         }
@@ -127,8 +127,6 @@ public class MenuEditarCategoriaController {
 
     @FXML
     void editarCategoria(ActionEvent event) {
-        categoriaInexistente.setVisible(false);
-        IdInvalido.setVisible(false);
         txtArea.setVisible(false);
         txtBusca.setVisible(false);
         buttonBuscar.setVisible(false);
@@ -140,37 +138,18 @@ public class MenuEditarCategoriaController {
 
     @FXML
     void editarID(ActionEvent event) {
-        categoriaInexistente.setVisible(false);
-        IdInvalido.setVisible(false);
-        txtArea.setVisible(false);
-        txtBusca.setVisible(false);
-        buttonBuscar.setVisible(false);
-        Categoria.setVisible(false);
-        digiteID.setVisible(false);
-        buttonEditar.setVisible(false);
-        buttonEscolha.setVisible(false);
         buttonSalvar.setVisible(true);
         txtIdNovo.setVisible(true);
         idNovo.setVisible(true);
+        buttonEditar.setVisible(false);
     }
 
     @FXML
     void editarNome(ActionEvent event) {
-        categoriaInexistente.setVisible(false);
-        IdInvalido.setVisible(false);
-        txtArea.setVisible(false);
-        txtBusca.setVisible(false);
-        buttonBuscar.setVisible(false);
-        Categoria.setVisible(false);
-        digiteID.setVisible(false);
-        buttonEditar.setVisible(false);
-        buttonEscolha.setVisible(false);
-        buttonSalvar.setVisible(false);
-        txtIdNovo.setVisible(false);
-        idNovo.setVisible(false);
         buttonSalvar2.setVisible(true);
         txtNomeNovo.setVisible(true);
         nomeNovo.setVisible(true);
+        buttonEditar.setVisible(false);
     }
 
     @FXML
@@ -186,12 +165,12 @@ public class MenuEditarCategoriaController {
             Categoria Objeto = (Categoria) categoriaNoh.getObjeto();
             String nomeAntigo = Objeto.getNomeCategoria().toString();
             String nome = txtNomeNovo.getText();
-            Arquivo.editarArquivoCSV("lib\\Categorias.csv", nomeAntigo, 1, nome, 1);
+            Arquivo.editarArquivoCSV("lib\\Categorias.csv",busca,0, nomeAntigo, 1, nome, 1);
         }
-        buttonSalvar.setVisible(false);
-        txtIdNovo.setVisible(false);
-        idNovo.setVisible(false);
-        idModificado.setVisible(true);
+        buttonSalvar2.setVisible(false);
+        txtNomeNovo.setVisible(false);
+        nomeNovo.setVisible(false);
+        nomeModificado.setVisible(true);
         Task<Void> pausaTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
@@ -200,15 +179,7 @@ public class MenuEditarCategoriaController {
             }
         };
         pausaTask.setOnSucceeded(e -> {
-            idModificado.setVisible(false);
-            categoriaInexistente.setVisible(false);
-            IdInvalido.setVisible(false);
-            txtArea.setVisible(false);
-            txtBusca.setVisible(false);
-            buttonBuscar.setVisible(false);
-            Categoria.setVisible(false);
-            digiteID.setVisible(false);
-            buttonEditar.setVisible(false);
+            nomeModificado.setVisible(false);
             buttonEscolha.setVisible(true);
         });
         new Thread(pausaTask).start();
@@ -222,8 +193,8 @@ public class MenuEditarCategoriaController {
             IdInvalido.setVisible(true);
         } else {
             IdInvalido.setVisible(false);
-            Arquivo.editarArquivoCSV("lib\\Categorias.csv", idAntigo, 0, iD, 0);
-            Arquivo.editarArquivoCSV("lib\\Veiculos.csv", idAntigo, 6, iD, 6);
+            Arquivo.editarArquivoCSV("lib\\Categorias.csv",idAntigo,0, idAntigo, 0, iD, 0);
+            Arquivo.editarArquivoCSV("lib\\Veiculos.csv",idAntigo,6, idAntigo, 6, iD, 6);
             buttonSalvar.setVisible(false);
             txtIdNovo.setVisible(false);
             idNovo.setVisible(false);
@@ -237,14 +208,6 @@ public class MenuEditarCategoriaController {
             };
             pausaTask.setOnSucceeded(e -> {
                 idModificado.setVisible(false);
-                categoriaInexistente.setVisible(false);
-                IdInvalido.setVisible(false);
-                txtArea.setVisible(false);
-                txtBusca.setVisible(false);
-                buttonBuscar.setVisible(false);
-                Categoria.setVisible(false);
-                digiteID.setVisible(false);
-                buttonEditar.setVisible(false);
                 buttonEscolha.setVisible(true);
             });
             new Thread(pausaTask).start();
